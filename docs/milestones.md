@@ -13,7 +13,7 @@ y cuando pase los tests correctamente.
 
 ## [M2] Implementación de preferencias de usuario
 
-El fin es incluir en dicha asignación semanal de caracter rotativo la posibilidad de
+El fin es incluir en dicha asignación semanal de carácter rotativo la posibilidad de
 tener en cuenta ciertas preferencias de tareas de los usuarios, pudiendo descartar o fijar
 asignaciones concretas para un usuario. El entregable será el código fuente necesario y
 este será considerado viable cuando pase los tests correspondientes.
