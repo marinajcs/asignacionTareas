@@ -1,10 +1,9 @@
 import { Compi } from './compi';
 import { ZonasComunes } from './zonascomunes';
 
-//El horario es también la representación del piso
 class Horario {
     private readonly idpiso: number;
-    private readonly zonas: Array<ZonasComunes>; // Una vez se crea el piso, no se pueden añadir más zonas comunes
+    private readonly zonas: Array<ZonasComunes>;
 
     constructor(idpiso: number, zonas: Array<ZonasComunes>){
         this.idpiso = idpiso;

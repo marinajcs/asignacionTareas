@@ -3,8 +3,8 @@ import { Tareas } from './interfaces';
 
 export class ZonasComunes {
     readonly nombre: string;
-    readonly propietarios: Array<Compi>;     // Array de compis que usan la zona común
-    tareas: Array<Tareas>;                   // Array de tareas
+    readonly propietarios: Array<Compi>;     
+    tareas: Array<Tareas>;                   
 
 constructor(nombre: string, tareas: Array<Tareas>, propietarios: Array<Compi>) {
         this.nombre = nombre;
