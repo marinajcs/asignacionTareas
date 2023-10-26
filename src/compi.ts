@@ -1,9 +1,4 @@
-//Interfaz que representa un intervalo de tiempo
-interface IntervaloHorario {
-     fechaInicio : Date;
-     fechaFin : Date;
-}
-
+import { IntervaloHorario } from './interfaces';
 
 export class Compi {
     readonly id: number;

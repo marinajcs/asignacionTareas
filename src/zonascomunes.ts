@@ -1,10 +1,5 @@
 import { Compi } from './compi';
-
-interface Tareas {
-    tarea: string;
-    duracionEstimada: number;
-    realizada: boolean;
-}
+import { Tareas } from './interfaces';
 
 export class ZonasComunes {
     readonly nombre: string;
