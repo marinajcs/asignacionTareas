@@ -1,4 +1,7 @@
-import { IntervaloHorario } from './interfaces';
+type IntervaloHorario = {
+    fechaInicio : Date;
+    fechaFin : Date;
+}
 
 export class Compi {
     readonly id: number;
