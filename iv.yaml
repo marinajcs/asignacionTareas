@@ -1,2 +1,2 @@
 lenguaje: TypeScript
-entidad: src/Horario.ts
+entidad: lib/Horario.ts
