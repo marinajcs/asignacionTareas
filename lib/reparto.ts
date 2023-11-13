@@ -1,7 +1,6 @@
 import { Compi } from './compi';
 
 type Tarea = {
-    nombre: string;
     duracionEstimada: number;
     puntuacion: number;
 }
