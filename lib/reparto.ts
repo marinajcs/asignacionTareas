@@ -1,6 +1,6 @@
 import { Compi } from './compi';
 
-type Tarea = {
+export type Tarea = {
     duracionEstimada: number;
     puntuacion: number;
 }
