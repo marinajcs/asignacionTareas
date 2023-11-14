@@ -24,7 +24,7 @@ Los [milestones](docs/milestones.md) o productos mínimamente viables.
 
 ## Comprobación de sintaxis
 
-Para ejcutar la orden que permite comprobar la sintaxis del código, el comando es:
+Para ejecutar la orden que permite comprobar la sintaxis del código, el comando es:
 ```bash
 pnpm grunt check
 ```
