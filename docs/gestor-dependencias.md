@@ -40,14 +40,13 @@ proyectos en un único espacio de almacenamiento.
 
 ## Elección final
 
-- Estándares y Conformidad:
+Al final, se ha optado por *pnpm* debido a los siguientes factores:
 
+- Estándares y conformidad:
 pnpm cumple con las especificaciones y estándares de CommonJS y Node.js, lo que lo hace compatible con proyectos y bibliotecas comunes en el ecosistema de JavaScript y TypeScript.
 
-- Recomendaciones y Comunidad:
-
+- Recomendaciones y comunidad:
 pnpm tiene una comunidad activa y creciente, y está respaldado por desarrolladores que valoran la eficiencia en la instalación de paquetes. Aunque puede no ser tan ampliamente conocido como npm o Yarn, ha ganado apoyo significativo y se ha convertido en una opción recomendada en ciertos círculos de desarrollo.
 
-- Mejores Prácticas:
-
+- Mejores prácticas:
 pnpm permite implementar muchas de las mismas mejores prácticas que npm y Yarn, como la definición de dependencias en el archivo package.json, la gestión de dependencias de desarrollo, la instalación de versiones específicas de paquetes y la actualización segura de dependencias.
