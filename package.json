@@ -1,22 +1,19 @@
 {
-  "name": "asignaciontareas",
+  "name": "asignacionTareas",
   "version": "1.0.0",
-  "description": "## Configuración de GitHub",
+  "description": "",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marinajcs/asignacionTareas.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/marinajcs/asignacionTareas/issues"
-  },
-  "homepage": "https://github.com/marinajcs/asignacionTareas#readme"
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.53.0",
+    "grunt": "^1.6.1",
+    "grunt-eslint": "^24.3.0"
+  }
 }
