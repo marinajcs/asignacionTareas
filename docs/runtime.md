@@ -47,7 +47,7 @@ El rendimiento de Node.js es generalmente más rápido que el de Deno.
 ampliamente adoptado. Cuenta con una gran comunidad de desarrolladores (más grande
 que la de Deno), módulos y recursos, y respaldo de la Fundación Node.js,
 garantizando un soporte duradero y fiable.
-4. *Facilidad de despliegue*: Tiene una amplia variedad de herramientas para el
+4. *Facilidad de despliegue*: tiene una amplia variedad de herramientas para el
 despliegue, como una gran variedad de gestores de dependencias compatibles,
 y diversas opciones para la implementación en la nube.
 5. *Seguridad*: si bien es cierto que Node.js no estaba diseñado con la seguridad
