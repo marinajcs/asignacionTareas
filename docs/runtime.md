@@ -4,6 +4,18 @@ La elección del runtime es crucial en el desarrollo de software, pues determina
 el entorno de ejecución del código. Esto repercute directamente en el rendimiento,
 la compatibilidad y la eficiencia, e influye en la elección de otras herramientas.
 
+## Criterios de selección
+
+En el caso de desarrollar una aplicación que realice una asignación de tareas, los
+criterios a tener en cuenta van a ser los siguientes:
+
+1. *Compatibilidad* con el lenguaje de programación (TypeScript): es primordial
+2. *Rendimiento*: tiempos de respuesta rápidos y uso eficiente de los recursos
+3. *Comunidad y soporte*: para la resolución de problemas y mantenimiento de la app
+4. *Facilidad de despliegue*: simplificará en gran medida la gestión de la app
+5. *Seguridad*: la protección de datos es importante también, aunque en mi caso
+se priorizará el rendimiento frente a la seguridad.
+
 ## Opciones consideradas
 
 ### Node.js
@@ -25,13 +37,21 @@ aplicación frontend.
 
 Finalmente, se ha optado por **Node.js**, debido a una serie de factores:
 
-* Madurez de la comunidad: es un entorno de ejecución para JavaScript y TypeScript
-ampliamente adoptado, por lo que cuenta con una gran comunidad de desarrolladores.
-* Compatibilidad: es compatible con una gran variedad de sistemas operativos, 
-por tanto se puede implementar en diversos entornos.
-* Versatilidad: es adecuado para muchos casos de uso, desde servidores hasta
-scripts de línea de comandos, permitiendo adaptarlo a diversas necesidades.
-* Rendimiento: ofrece un rendimiento sólido y eficiente para muchas aplicaciones,
-lo que ha sido comprobado por numerosos estudios.
-* Facilidad de despliegue: muchas plataformas de alojamiento en la nube están
-optimizadas para Node.js, lo que facilita la escalabilidad y despliegue.
+1. *Compatibilidad* con el lenguaje de programación: al igual que Deno,
+es altamente compatible con TypeScript.
+2. *Rendimiento*: ha sido ampliamente utilizado en entornos de producción
+durante muchos años, lo que ha llevado a una optimización significativa y
+a una gran cantidad de módulos y bibliotecas de terceros altamente eficientes.
+El rendimiento de Node.js es generalmente más rápido que el de Deno.
+3. *Comunidad y soporte*: es un entorno de ejecución para JavaScript y TypeScript
+ampliamente adoptado. Cuenta con una gran comunidad de desarrolladores (más grande
+que la de Deno), módulos y recursos, y respaldo de la Fundación Node.js,
+garantizando un soporte duradero y fiable.
+4. *Facilidad de despliegue*: Tiene una amplia variedad de herramientas para el
+despliegue, como una gran variedad de gestores de dependencias compatibles,
+y diversas opciones para la implementación en la nube.
+5. *Seguridad*: si bien es cierto que Node.js no estaba diseñado con la seguridad
+como prioridad, con el tiempo se han implementado diversas mejoras. En este caso,
+se prioriza el rendimiento frente a la seguridad, ya que es más importante que
+funcione de forma fluida y rápida, y los datos que manejará (tareas domésticas)
+no necesitan gran confidencialidad.
