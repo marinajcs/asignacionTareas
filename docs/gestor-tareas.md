@@ -58,7 +58,7 @@ de tareas comunes en el desarrollo web, ya que puede haber un complemento espec�
 realice la tarea que se busca siguiendo buenas prácticas. Además, al seguir una configuración basada en archivos,
 Grunt se integra sin problemas en el flujo de trabajo de desarrollo.
 
-Otras ventajas frente a Gulp incluyen:
+Otras ventajas frente a otros gestores de tareas incluyen:
 * Sintaxis más estructurada: Grunt utiliza una configuración declarativa basada en objetos JSON,
 lo que puede hacerla más fácil de entender en términos de tareas con dificultad limitada, al ser
 más directa y suficiente.
