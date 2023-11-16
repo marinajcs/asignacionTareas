@@ -16,15 +16,16 @@ ordenadas de manejo de dependencias.
 
 ## Opciones consideradas
 
-### deno
+Una vez elegido Node.js como runtime, se han considerado los siguientes gestores:
 
-* *Descripción*: Deno es un entorno de ejecución para JavaScript y
-TypeScript construido con el motor V8 de Chrome y escrito en Rust.
-Se centra en la seguridad, la facilidad de uso y la compatibilidad
-con los estándares web modernos.
-* *Características*: seguridad por defecto, sin necesidad de un
-archivo de configuración (package.json-like), soporte nativo para
-TypeScript
+### bun
+
+* *Descripción*: Bun es un entorno de ejecución relativamente
+nuevo para JavaScript, pero también un empaquetador y gestor de paquetes.
+Es compatible si se ha elegido Node.js como runtime.
+* *Características*: utiliza enlaces simbólicos, un archivo de bloqueo
+binario y su gestor de paquetes está escrito en Zig. Todo esto contribuye
+a que sea más rápido.
 
 ### npm
 
