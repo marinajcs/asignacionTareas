@@ -1,13 +1,12 @@
 module.exports = function (grunt) {
+    // Configuración de Grunt
     grunt.initConfig({
-        // Comprobación de sintaxis
-        eslint: {
-            target: ['lib/*.ts']
+        exec: {
+            typescript: 'tsc --noEmit lib/*.ts'
         }
     });
-
-    grunt.loadNpmTasks('grunt-eslint');
-    grunt.registerTask('check', ['eslint']);
+    grunt.loadNpmTasks('grunt-exec');
+    grunt.registerTask('check', 'exec:typescript');
 
     // Tarea predeterminada al ejecutar 'grunt' en la línea de comandos
     grunt.registerTask('default', function () {

@@ -20,6 +20,12 @@ devDependencies:
   grunt-eslint:
     specifier: ^24.3.0
     version: 24.3.0(grunt@1.6.1)
+  grunt-exec:
+    specifier: ^3.0.0
+    version: 3.0.0(grunt@1.6.1)
+  typescript:
+    specifier: ^5.2.2
+    version: 5.2.2
 
 packages:
 
@@ -756,6 +762,15 @@ packages:
       grunt: 1.6.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /grunt-exec@3.0.0(grunt@1.6.1):
+    resolution: {integrity: sha512-cgAlreXf3muSYS5LzW0Cc4xHK03BjFOYk0MqCQ/MZ3k1Xz2GU7D+IAJg4UKicxpO+XdONJdx/NJ6kpy2wI+uHg==}
+    engines: {node: '>=0.8.0'}
+    peerDependencies:
+      grunt: '>=0.4'
+    dependencies:
+      grunt: 1.6.1
     dev: true
 
   /grunt-known-options@2.0.0:
