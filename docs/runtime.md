@@ -28,11 +28,6 @@ el desarrollo de servidores y aplicaciones en línea
 Creado por el mismo que desarrolló Node.js, fue diseñado para abordar ciertos
 problemas de seguridad y diseño.
 
-### Navegador
-
-También puede ejecutarse directamente sobre el navegador como parte de una
-aplicación frontend.
-
 ## Elección final
 
 Finalmente, se ha optado por **Node.js**, debido a una serie de factores:
