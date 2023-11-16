@@ -20,10 +20,21 @@ otras prácticas de desarrollo eficientes.
 * *Descripción*: Make es una herramienta de construcción que automatiza la compilación y ejecución de programas. Utiliza un archivo llamado Makefile para definir reglas y dependencias.
 * *Características*: sistema de construcción de propósito general, define reglas en un Makefile, manejo de dependencias.
 
-### gulp
+## npm run
 
-* *Descripción*: Gulp es un sistema de construcción y automatización de tareas para JavaScript. Se utiliza para realizar tareas repetitivas como la minificación de archivos, la compilación de preprocesadores y más.
-* *Características*: flujo de trabajo basado en secuencias, código en JavaScript, amplia gama de complementos, transparencia en la configuración.
+* *Descripción*: gestor de paquetes predeterminado para Node.js.
+* *Características*: ejecuta scripts definidos en el archivo package.json y mantiene un registro centralizado de dependencias.
+
+## pnpm run
+
+* *Descripción*: Administrador de paquetes para Node.js con almacenamiento compartido.
+* *Características*: comparte dependencias para conservar espacio, instalación rápida y eficiente y ejecuta scripts del archivo package.json.
+
+
+## yarn run
+
+* *Descripción*: Alternativa a npm, también es un administrador de paquetes para Node.js.
+* *Características*: instalación rápida y consistente, ejecuta scripts del archivo package.json.
 
 ### grunt
 
@@ -32,18 +43,20 @@ otras prácticas de desarrollo eficientes.
 
 ## Elección final
 
-Para el desarrollo de una solución para el problema de la asignación de tareas en un piso de estudiantes, tanto Gulp como Grunt pueden ser adecuados; sin embargo, podría tener sentido 
+Para el desarrollo de una solución para el problema de la asignación de tareas en un piso de estudiantes, podría tener sentido 
 inclinarse hacia Grunt por las siguientes razones:
 
 1. *Estándares y conformidad*: Grunt sigue estándares para garantizar la coherencia en el desarrollo
 y la integración con otras herramientas. Su configuración basada en archivos y su estructura modular permiten que los desarrolladores sigan convenciones y prácticas comunes en el desarrollo web,
 lo que facilita la colaboración y la interoperabilidad con otras herramientas y sistemas.
-2. *Recomendaciones y comunidad*: Grunt tiene una comunidad activa respaldando su fiabilidad y evolución.
-Aunque Gulp también tiene una comunidad fuerte, Grunt ha existido por más tiempo y ha acumulado un sólido
+2. *Recomendaciones y comunidad*: Grunt tiene una comunidad activa respaldando su fiabilidad y evolución,
+a diferencia de algunos obsoletos como Gulp. Grunt ha existido por más tiempo y ha acumulado un sólido
 respaldo en la comunidad de desarrollo web. Las recomendaciones y experiencias compartidas por esta
 comunidad pueden ser valiosas al abordar casos de uso específicos en una aplicación de asignación de tareas.
-3. *Mejores prácticas*: Grunt ofrece una amplia variedad de complementos (plugins) que simplifican la automatización de tareas comunes en el desarrollo web, ya que puede haber un complemento específico que
-realice la tarea que se busca siguiendo buenas prácticas. Además, al seguir una configuración basada en archivos, Grunt se integra sin problemas en el flujo de trabajo de desarrollo.
+3. *Mejores prácticas*: Grunt ofrece una amplia variedad de complementos (plugins) que simplifican la automatización
+de tareas comunes en el desarrollo web, ya que puede haber un complemento específico que
+realice la tarea que se busca siguiendo buenas prácticas. Además, al seguir una configuración basada en archivos,
+Grunt se integra sin problemas en el flujo de trabajo de desarrollo.
 
 Otras ventajas frente a Gulp incluyen:
 * Sintaxis más estructurada: Grunt utiliza una configuración declarativa basada en objetos JSON,
