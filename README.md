@@ -15,3 +15,16 @@ Las [historias de usuario](docs/historias-usuario.md) siguiendo la metodología 
 ## Milestones
 
 Los [milestones](docs/milestones.md) o productos mínimamente viables.
+
+## Toolchain
+
+* Elección del [runtime](docs/runtime.md)
+* Elección del [gestor de dependencias](docs/gestor-dependencias.md)
+* Elección del [gestor de tareas](docs/gestor-tareas.md)
+
+## Comprobación de sintaxis
+
+Para ejecutar la orden que permite comprobar la sintaxis del código, el comando es:
+```bash
+pnpm grunt check
+```
