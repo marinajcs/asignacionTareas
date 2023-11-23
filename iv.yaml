@@ -3,3 +3,4 @@ entidad: lib/reparto.ts
 automatizar:
   fichero: Gruntfile.js
   orden: pnpm grunt
+test: test/reparto.test.ts

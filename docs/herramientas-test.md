@@ -61,24 +61,25 @@ aserciones. Utiliza un estilo de desarrollo conducido BDD que enfatiza la legibi
 del código de prueba. Su propio conjunto de Matchers para realizar aserciones de manera clara y expresiva.
 
 
-La elección final entre las aserciones anteriores han sido las de **Jasmine**, debido a los siguientes
+La elección final entre las aserciones anteriores han sido las de **Chai**, debido a los siguientes
 factores:
-1. *Estándares y conformidad*: Jasmine utiliza una sintaxis clara y legible que facilita la escritura y
-comprensión de las pruebas. Sus bloques *describe* y *it* proporcionan una estructura organizada para
-las especificaciones y *suites* de prueba. Además, se alinea con el enfoque de BDD que se ha elegido
-seguir.
-2. *Recomendaciones y comunidad*: Jasmine tiene una comunidad activa y amplia, así que se pueden
-encontrar una gran cantidad de recursos en línea y soluciones a problemas comunes, por no mencionar
-que ha sido adoptado en muchos proyectos y organizaciones, lo que respalda su confiabilidad y
-estabilidad.
-3. *Mejores prácticas*: Jasmine se integra bien con otras herramientas y marcos comunes, ofrece
-funciones integradas para realizar operaciones como mocking y espionaje, soporte para matchers
-personalizados, etc. Todo esto facilita la implementación de buenas prácticas en el desarrollo
-de pruebas.
+1. *Estándares y conformidad*: Chai se destaca por aserciones expresivas y legibles, facilitando la
+comprensión de las pruebas. Su sintaxis tipo BDD contribuye a una interpretación más clara del código.
+Ofrece flexibilidad con varios estilos de aserciones (should, expect, assert), permitiendo adoptar el estilo
+que mejor se alinee con cada usuario.
+2. *Recomendaciones y comunidad*: Chai es muy utilizado en la comunidad, con una base de usuarios activa
+y abundante soporte y recursos disponibles en línea. Además, se integra de forma eficiente con varias
+herramientas y marcos de pruebas, lo que simplifica su implementación en diversos proyectos, incluyendo
+una fácil compatibilidad con test runners como Mocha y Jasmine.
+3. *Mejores prácticas*: Chai se integra bien con otras herramientas y marcos comunes. Permite agregar
+aserciones personalizadas, lo que fomenta la adaptación a casos de uso específicos y la creación de
+pruebas más específicas y significativas. Chai tiene tipos de TypeScript oficialmente mantenidos
+(@types/chai), lo que facilita la integración y proporciona una experiencia de desarrollo más sólida.
+
 
 ## Test runners/frameworks
 
-Una vez escogidas las aserciones de Jasmine, se pueden utilizar un conjunto de herramientas que se
+Una vez escogidas las aserciones de Chai, se pueden utilizar un conjunto de herramientas que se
 integren bien con este entorno. Se han considerado los siguientes frameworks de testing:
 
 * **Jest**: como se ha mencionado anteriormente, es un marco de prubea conocido por su configuración
@@ -88,14 +89,18 @@ diferentes bibliotecas, pudiendo usar Mocha con aserciones Jasmine para las prue
 * **Jasmine**: puede ejecutarse directamente en Node.js sin necesidad de un test runner externo,
 instalando el paquete `jasmine`.
 
-Dado que **Jasmine** ya de por sí es un marco de pruebas completo, se ha optado por este framework que
-ya tiene incluido su propio test runner. Los [criterios de selección](#aserciones) seguidos han sido los
-mismos que en el apartado anterior.
+La elección final entre los test runners anteriores ha sido **Mocha**, debido a los siguientes
+factores:
+1. *Estándares y conformidad*: Mocha admite múltiples estilos de escritura de pruebas y permite adoptar convenciones que se adapten a sus preferencias (describe, it, suite, test...)
+2. *Recomendaciones y comunidad*: Mocha cuenta con una amplia adopción y popularidad en la comunidad,
+documentación completa y recursos en línea, integración con otras herramientas y un ecosistema robusto.
+3. *Mejores prácticas*: Mocha dispone de soporte eficiente para pruebas asíncronas, utilización de hooks
+y suites jerárquicas para configuración y limpieza... Em general, permite adoptar buenas prácticas en el
+desarrollo de tests.
 
 ## Herramientas CLI para la ejecución de tests
 
-Para poder ejecutar tests escritos con Jasmine, se puede usar `jasmine-cli` o entornos CLI
-de otros frameworks, aunque supone la instalación adicional e innecesaria de más herramientas.
+Para poder ejecutar los tests escritos no se requiere la instalación adicional de más herramientas.
 Es conveniente hacer uso de los gestores **pnpm** y **grunt**, ya instalados y configurados
 en el proyecto.
 

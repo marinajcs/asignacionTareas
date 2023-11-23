@@ -4,16 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.3.10",
     "grunt": "^1.6.1",
-    "grunt-contrib-jasmine": "^4.0.0",
     "grunt-exec": "^3.0.0",
-    "jasmine": "^5.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "grunt-ts": "6.0.0-beta.22",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {

@@ -3,12 +3,13 @@
         "target": "es6", // Versión de ECMAScript que se compilará
         "module": "commonjs", // Sistema de módulos a utilizar
         "outDir": "./dist", // Directorio de salida para los archivos compilados
-        "rootDir": "./lib", // Directorio raíz de los archivos fuente TypeScript
         "strict": true, // Habilita todas las opciones estrictas de TypeScript
         "forceConsistentCasingInFileNames": true, // Fuerza consistencia en mayúsculas/minúsculas en nombres de archivos
         "resolveJsonModule": true // Habilita la importación de archivos JSON como módulos
     },
     "include": [
-        "lib"
-    ]
+        "lib/*.ts",
+        "test/*.ts"
+    ],
+    "exclude": ["node_modules"]
 }

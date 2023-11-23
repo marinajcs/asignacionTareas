@@ -2,20 +2,17 @@ module.exports = function (grunt) {
     // Configuración de Grunt
     grunt.initConfig({
         exec: {
-            typescript: 'tsc --noEmit lib/*.ts'
+            typescript: 'tsc --noEmit --target es6 lib/*.ts spec/*.ts',
+            mochaTest: 'mocha --require ts-node/register test/**/*.test.ts"' 
         },
-
-        jasmine: {
-            src: 'lib/*.js',
-            options: {
-                specs: 'test/*.js',
-            }
-        }
+        
     });
+
     grunt.loadNpmTasks('grunt-exec');
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-ts');
+    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.registerTask('check', 'exec:typescript');
-    grunt.registerTask('test', ['jasmine'])
+    grunt.registerTask('test', 'exec:mochaTest');
 
     // Tarea predeterminada al ejecutar 'grunt' en la línea de comandos
     grunt.registerTask('default', function () {
