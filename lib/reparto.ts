@@ -29,7 +29,6 @@ export class Reparto {
             throw new Error('El array de compañeros no puede estar vacío');
         }
         let asignaciones = new Map<Compi, Tarea[]>();
-
         this.compis.forEach(compi => asignaciones.set(compi, []));
         // Ordenar de menor a mayor horas disponibles
         const compisOrdenados = [...this.compis].sort((a,b) => a.horasDisponibles - b.horasDisponibles);
@@ -38,10 +37,10 @@ export class Reparto {
 
         tareasOrdenadas.forEach(tarea => {
             const compisDisponibles = compisOrdenados.filter(compi => {
-                const tiempoAsignado = asignaciones.get(compi)!.reduce((total, t) => total + t.duracionEstimada, 0);
+                const tiempoAsignado = this.calcularTiempoAsignado(compi, asignaciones);
                 return tiempoAsignado + tarea.duracionEstimada <= compi.horasDisponibles;
             }).filter(compi => {
-                const ptsAsignados = asignaciones.get(compi)!.reduce((total, t) => total + t.puntuacion, 0);
+                const ptsAsignados = this.calcularPuntuacion(compi, asignaciones);
                 return ptsAsignados < this.goal;
             });
 
@@ -51,11 +50,29 @@ export class Reparto {
             }
         });
 
+        this.compis.forEach(compi => {
+            const ptsAsignados = this.calcularPuntuacion(compi, asignaciones);
+            if (ptsAsignados < this.goal) {
+                this.goal = ptsAsignados;
+            }
+        });
+
         return asignaciones;
     }
 
     reiniciarSemana(): void{
         //Volcar el vector de tareas completadas en el de tareas disponibles
+    }
+
+    calcularTiempoAsignado(c: Compi, asignaciones: Map<Compi, Tarea[]>): number {
+        let tCompi = 0;
+        const tareasAsignadas = asignaciones.get(c);
+
+        if (tareasAsignadas) {
+            tCompi = tareasAsignadas.map(tarea => tarea.duracionEstimada).reduce((total, t) => total + t, 0);
+
+        }
+        return tCompi;
     }
 
     calcularPuntuacion(c: Compi, asignaciones: Map<Compi,Tarea[]>): number{

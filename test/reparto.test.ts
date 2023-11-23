@@ -65,5 +65,8 @@ describe('Asignación justa de tareas', () => {
 
         expect(gestorTareas.calcularPuntuacion(Rebeca, asignaciones)).to.be.gte(goal);
         expect(gestorTareas.calcularPuntuacion(Laura, asignaciones)).to.be.gte(goal);
+        expect(gestorTareas.calcularPuntuacion(Fernando, asignaciones)).to.be.gte(goal);
+
     });
+
 });

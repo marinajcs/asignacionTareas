@@ -5,4 +5,5 @@ export class Compi {
         readonly horasDisponibles: number,
         public prefiere?: Array<Tarea>,
         public detesta?: Array<Tarea>) {}
+
 }
