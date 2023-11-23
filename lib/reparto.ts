@@ -34,7 +34,7 @@ export class Reparto {
         // Ordenar de menor a mayor horas disponibles
         const compisOrdenados = [...this.compis].sort((a,b) => a.horasDisponibles - b.horasDisponibles);
         // Ordenar de mayor a menor puntuación
-        const tareasOrdenadas = [...this.tareasDisponibles].sort((a,b) => a.puntuacion - b.puntuacion);
+        const tareasOrdenadas = [...this.tareasDisponibles].sort((a,b) => b.puntuacion - a.puntuacion);
 
         tareasOrdenadas.forEach(tarea => {
             const compisDisponibles = compisOrdenados.filter(compi => {
