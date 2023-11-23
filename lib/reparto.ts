@@ -7,17 +7,21 @@ export type Tarea = {
 
 export class Reparto {
 
-    constructor(
-        readonly compis: Array<Compi>,
-        readonly tareasDisponibles: Array<Tarea>,
-    ){}
+    private goal: number;
+    private tareasCompletadas: Array<Tarea>;
 
-    calcularGoal(): number{
-        let totalPuntuacion = 0;
-        for (const tarea of this.tareasDisponibles) {
-            totalPuntuacion += tarea.puntuacion;
-        }
-        return totalPuntuacion/this.compis.length;
+    constructor(readonly compis: Array<Compi>, readonly tareasDisponibles: Array<Tarea>){
+        this.goal = this.calcularGoal(compis, tareasDisponibles);
+        this.tareasCompletadas = new Array<Tarea>();
+    }
+
+    calcularGoal(compis:Array<Compi>, tareasDisponibles:Array<Tarea>): number{
+        const totalPts = tareasDisponibles.map(tarea => tarea.puntuacion).reduce((total, pts) => total + pts, 0);
+        return totalPts/compis.length;
+    }
+
+    getGoal(): number {
+        return this.goal;
     }
 
     asignarTareas(): Map<Compi,Tarea[]> {
@@ -25,6 +29,28 @@ export class Reparto {
         //Dividir las tareas entre los compañeros, según sus horas disponibles
         //Debería empezar a asignar por el compi que tenga menos horas disponibles,
         //para poder tener todas las combinaciones posibles para alcanzar el goal
+
+        this.compis.forEach(compi => asignaciones.set(compi, []));
+        // Ordenar de menor a mayor horas disponibles
+        const compisOrdenados = [...this.compis].sort((a,b) => a.horasDisponibles - b.horasDisponibles);
+        // Ordenar de mayor a menor puntuación
+        const tareasOrdenadas = [...this.tareasDisponibles].sort((a,b) => a.puntuacion - b.puntuacion);
+
+        tareasOrdenadas.forEach(tarea => {
+            const compisDisponibles = compisOrdenados.filter(compi => {
+                const tiempoAsignado = asignaciones.get(compi)!.reduce((total, t) => total + t.duracionEstimada, 0);
+                return tiempoAsignado + tarea.duracionEstimada <= compi.horasDisponibles;
+            }).filter(compi => {
+                const ptsAsignados = asignaciones.get(compi)!.reduce((total, t) => total + t.puntuacion, 0);
+                return ptsAsignados < this.goal;
+            });
+
+            if (compisDisponibles.length > 0) {
+                const compiAsignado = compisDisponibles[0];
+                asignaciones.get(compiAsignado)!.push(tarea);
+            }
+        });
+
         return asignaciones;
     }
 
@@ -35,6 +61,8 @@ export class Reparto {
     calcularPuntuacion(c: Compi, asignaciones: Map<Compi,Tarea[]>): number{
         return 0;
     }
+
+
 
 
 }
