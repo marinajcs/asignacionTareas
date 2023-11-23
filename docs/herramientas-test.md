@@ -49,13 +49,17 @@ la esperada, incluyendo mensajes si la comparación es positiva.
 
 Teniendo en cuenta que debe ser compatible con el enfoque de BDD, las opciones consideradas
 han sido las siguientes:
-* **Chai**: es una biblioteca de aserciones flexible que se puede utilizar con diversos estilos de BDD. Ofrece las interfaces *expect*, *should*, y *assert*, lo que permite elegir el estilo
+* **Chai**: es una biblioteca de aserciones flexible que se puede utilizar con diversos estilos
+de BDD. Ofrece las interfaces *expect*, *should*, y *assert*, lo que permite elegir el estilo
 que mejor se adapte a las preferencias de uno.
-* **Jest**: es un marco de prueba que incorpora su propia biblioteca de aserciones y se integra bien con BDD. Utiliza una sintaxis sencilla y es conocido por su configuración fácil y rápida.
-* **Earl**: biblioteca de aserciones para JavaScript que busca proporcionar mensajes de error detallados y
-comprensibles. Ofrece una sintaxis similar a la de las aserciones estándar de JavaScript y permite
-realizar comparaciones más avanzadas, como verificar propiedades de objetos anidados.
-* **Assert Node.js**: Node.js incluye un módulo de aserciones nativo llamado assert. Este módulo proporciona funciones simples para realizar aserciones en entornos Node.js. Aunque es básico en comparación con algunas bibliotecas externas.
+* **Jest**: es un marco de prueba que incorpora su propia biblioteca de aserciones y se integra bien
+con BDD. Utiliza una sintaxis sencilla y es conocido por su configuración fácil y rápida.
+* **Earl**: biblioteca de aserciones para JavaScript que busca proporcionar mensajes de error
+detallados y comprensibles. Ofrece una sintaxis similar a la de las aserciones estándar de JavaScript
+y permite realizar comparaciones más avanzadas, como verificar propiedades de objetos anidados.
+* **Assert Node.js**: Node.js incluye un módulo de aserciones nativo llamado assert. Este módulo
+proporciona funciones simples para realizar aserciones en entornos Node.js. Aunque es básico en
+comparación con algunas bibliotecas externas.
 * **Jasmine**: es un framework all-in-one que incluye tanto el marco de pruebas como la biblioteca de
 aserciones. Utiliza un estilo de desarrollo conducido BDD que enfatiza la legibilidad y la comprensión
 del código de prueba. Su propio conjunto de Matchers para realizar aserciones de manera clara y expresiva.
@@ -85,22 +89,24 @@ integren bien con este entorno. Se han considerado los siguientes frameworks de 
 * **Jest**: como se ha mencionado anteriormente, es un marco de prubea conocido por su configuración
 fácil y rápida. Aunque tiene su propio conjunto de aserciones, también es compatible con las de Jasmine.
 * **Mocha**: es un framework de pruebas popular que ofrece flexibilidad y soporte para aserciones de
-diferentes bibliotecas, pudiendo usar Mocha con aserciones Jasmine para las pruebas.
+diferentes bibliotecas, pudiendo usar Mocha con aserciones Chai para las pruebas.
 * **Jasmine**: puede ejecutarse directamente en Node.js sin necesidad de un test runner externo,
 instalando el paquete `jasmine`.
 
 La elección final entre los test runners anteriores ha sido **Mocha**, debido a los siguientes
 factores:
-1. *Estándares y conformidad*: Mocha admite múltiples estilos de escritura de pruebas y permite adoptar convenciones que se adapten a sus preferencias (describe, it, suite, test...)
+1. *Estándares y conformidad*: Mocha admite múltiples estilos de escritura de pruebas y permite
+adoptar convenciones que se adapten a distintas preferencias (describe, it, suite, test...). Chai
+y Mocha es una combinación bastante habitual, pues se integran muy bien entre sí.
 2. *Recomendaciones y comunidad*: Mocha cuenta con una amplia adopción y popularidad en la comunidad,
 documentación completa y recursos en línea, integración con otras herramientas y un ecosistema robusto.
 3. *Mejores prácticas*: Mocha dispone de soporte eficiente para pruebas asíncronas, utilización de hooks
-y suites jerárquicas para configuración y limpieza... Em general, permite adoptar buenas prácticas en el
+y suites jerárquicas para configuración y limpieza... En general, permite adoptar buenas prácticas en el
 desarrollo de tests.
 
 ## Herramientas CLI para la ejecución de tests
 
 Para poder ejecutar los tests escritos no se requiere la instalación adicional de más herramientas.
-Es conveniente hacer uso de los gestores **pnpm** y **grunt**, ya instalados y configurados
-en el proyecto.
+La interfaz de línea de comandos ya viene integrada en el test runner, así que bastaría con la
+terminal y los gestores ya configurados (pnpm y grunt) para poder realizar la ejecución de tests.
 
