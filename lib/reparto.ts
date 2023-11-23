@@ -25,10 +25,10 @@ export class Reparto {
     }
 
     asignarTareas(): Map<Compi,Tarea[]> {
+        if (this.compis.length === 0) {
+            throw new Error('El array de compañeros no puede estar vacío');
+        }
         let asignaciones = new Map<Compi, Tarea[]>();
-        //Dividir las tareas entre los compañeros, según sus horas disponibles
-        //Debería empezar a asignar por el compi que tenga menos horas disponibles,
-        //para poder tener todas las combinaciones posibles para alcanzar el goal
 
         this.compis.forEach(compi => asignaciones.set(compi, []));
         // Ordenar de menor a mayor horas disponibles
@@ -59,7 +59,14 @@ export class Reparto {
     }
 
     calcularPuntuacion(c: Compi, asignaciones: Map<Compi,Tarea[]>): number{
-        return 0;
+        let ptsCompi = 0;
+        const tareasAsignadas = asignaciones.get(c);
+
+        if (tareasAsignadas) {
+            ptsCompi = tareasAsignadas.map(tarea => tarea.puntuacion).reduce((total, pts) => total + pts, 0);
+
+        }
+        return ptsCompi;
     }
 
 

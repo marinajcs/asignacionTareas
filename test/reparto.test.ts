@@ -36,8 +36,9 @@ describe('Asignación justa de tareas', () => {
             gestorTareas.asignarTareas();
             throw new Error('Se esperaba una excepción pero no se lanzó.');
         } catch (error) {
-            expect(error instanceof Error).to.be.true;
-            expect(error).to.equal('El array de compañeros no puede estar vacío.');
+            const typedError = error as Error;
+            expect(typedError instanceof Error).to.be.true;
+            expect(typedError.message).to.equal('El array de compañeros no puede estar vacío');
         }
     });
 
