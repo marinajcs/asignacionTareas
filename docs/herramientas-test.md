@@ -62,10 +62,10 @@ proporciona funciones simples para realizar aserciones en entornos Node.js. Aunq
 comparación con algunas bibliotecas externas.
 * **Jasmine**: es un framework all-in-one que incluye tanto el marco de pruebas como la biblioteca de
 aserciones. Utiliza un estilo de desarrollo conducido BDD que enfatiza la legibilidad y la comprensión
-del código de prueba. Su propio conjunto de Matchers para realizar aserciones de manera clara y expresiva.
+del código de prueba. Su propio conjunto de matchers para realizar aserciones de manera clara y expresiva.
 
 
-La elección final entre las aserciones anteriores han sido las de **Chai**, debido a los siguientes
+La elección final entre las aserciones anteriores ha sido las de **Chai**, debido a los siguientes
 factores:
 1. *Estándares y conformidad*: Chai se destaca por aserciones expresivas y legibles, facilitando la
 comprensión de las pruebas. Su sintaxis tipo BDD contribuye a una interpretación más clara del código.
@@ -86,7 +86,7 @@ pruebas más específicas y significativas. Chai tiene tipos de TypeScript ofici
 Una vez escogidas las aserciones de Chai, se pueden utilizar un conjunto de herramientas que se
 integren bien con este entorno. Se han considerado los siguientes frameworks de testing:
 
-* **Jest**: como se ha mencionado anteriormente, es un marco de prubea conocido por su configuración
+* **Jest**: como se ha mencionado anteriormente, es un marco de prueba conocido por su configuración
 fácil y rápida. Aunque tiene su propio conjunto de aserciones, también es compatible con las de Jasmine.
 * **Mocha**: es un framework de pruebas popular que ofrece flexibilidad y soporte para aserciones de
 diferentes bibliotecas, pudiendo usar Mocha con aserciones Chai para las pruebas.
