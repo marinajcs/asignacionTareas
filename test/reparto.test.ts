@@ -111,7 +111,7 @@ describe('Asignación justa de tareas', () => {
     it('los compañeros deben cumplir con la meta de puntos semanales', () => {
         const gestorTareas = new Reparto([Rebeca, Laura, Fernando], [tarea1, tarea2, tarea3, tarea4, tarea5]);
         const asignaciones = gestorTareas.asignarTareas();
-        const goal = gestorTareas.getGoal();
+        const goal = gestorTareas.goal;
 
         expect(gestorTareas.calcularPuntuacion(Rebeca, asignaciones)).to.be.gte(goal);
         expect(gestorTareas.calcularPuntuacion(Laura, asignaciones)).to.be.gte(goal);
