@@ -3,16 +3,25 @@ import { Compi } from './compi';
 export type Tarea = {
     duracionEstimada: number;
     puntuacion: number;
-}
+};
 
 export class Reparto {
 
     private goal: number;
-    private tareasCompletadas: Array<Tarea>;
+    private tareasDisponibles: Array<Tarea>;
+    private compis: Array<Compi>;
 
-    constructor(readonly compis: Array<Compi>, readonly tareasDisponibles: Array<Tarea>){
-        this.goal = this.calcularGoal(compis, tareasDisponibles);
-        this.tareasCompletadas = new Array<Tarea>();
+    constructor(readonly compis_a_asignar: Array<Compi>, readonly tareas_a_asignar: Array<Tarea>) {
+        if (compis_a_asignar.length === 0) {
+            throw new Error('El array de compañeros no puede estar vacío');
+        }
+        this.compis = new Array<Compi>();
+        this.compis_a_asignar.forEach(c => this.addCompi(c));
+
+        this.tareasDisponibles = new Array<Tarea>();
+        this.tareas_a_asignar.forEach(t => this.addTarea(t));
+
+        this.goal = this.calcularGoal(this.compis, this.tareasDisponibles);
     }
 
     calcularGoal(compis:Array<Compi>, tareasDisponibles:Array<Tarea>): number{
@@ -25,9 +34,6 @@ export class Reparto {
     }
 
     asignarTareas(): Map<Compi,Tarea[]> {
-        if (this.compis.length === 0) {
-            throw new Error('El array de compañeros no puede estar vacío');
-        }
         let asignaciones = new Map<Compi, Tarea[]>();
         this.compis.forEach(compi => asignaciones.set(compi, []));
         // Ordenar de menor a mayor horas disponibles
@@ -60,8 +66,29 @@ export class Reparto {
         return asignaciones;
     }
 
-    reiniciarSemana(): void{
-        //Volcar el vector de tareas completadas en el de tareas disponibles
+    addTarea(t: Tarea): void {
+        if (t.duracionEstimada <= 0) {
+            throw new Error('La tarea debe tener una duración estimada válida');
+        } 
+        if (t.puntuacion <= 0) {
+            throw new Error('La tarea debe tener una puntuación válida');
+        }
+        this.tareasDisponibles.push(t);
+    }
+
+    removeTarea(t: Tarea): void {
+        this.tareasDisponibles.filter(tarea => tarea !== t);
+    }
+
+    addCompi(c: Compi): void {
+        if (c.horasDisponibles < 0) {
+            throw new Error('El compañero debe tener unas horas disponibles válidas');
+        } 
+        this.compis.push(c);
+    }
+
+    removeCompi(c: Compi): void {
+        this.compis.filter(compi => compi !== c);
     }
 
     calcularTiempoAsignado(c: Compi, asignaciones: Map<Compi, Tarea[]>): number {
@@ -75,7 +102,7 @@ export class Reparto {
         return tCompi;
     }
 
-    calcularPuntuacion(c: Compi, asignaciones: Map<Compi,Tarea[]>): number{
+    calcularPuntuacion(c: Compi, asignaciones: Map<Compi,Tarea[]>): number {
         let ptsCompi = 0;
         const tareasAsignadas = asignaciones.get(c);
 
@@ -86,7 +113,4 @@ export class Reparto {
         return ptsCompi;
     }
 
-
-
-
-}
+};
