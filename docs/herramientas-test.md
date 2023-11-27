@@ -39,18 +39,19 @@ proporciona funciones simples para realizar aserciones en entornos Node.js. Aunq
 comparación con algunas bibliotecas externas.
 * [**Hamjest**](https://github.com/rluba/hamjest): biblioteca de aserciones para JavaScript y TypeScript
 que sigue el estilo BDD y proporciona una sintaxis expresiva para realizar afirmaciones sobre valores en
-las pruebas.
-En cuanto a bibliotecas específicas para TypeScript, se han encontrado las siguientes:
-* [**Typed-Assert**](https://github.com/elierotenberg/typed-assert): proporciona funciones de aserciones
-con tipos fuertemente tipados. Es algo popular en cuanto a uso, pero por desgracia ha dejado de actualizarse.
-* [**Assertive-ts**](https://github.com/stackbuilders/assertive-ts): biblioteca de aserciones segura en cuanto
-a tipos y fluida. Desafortunadamente, ha dejado de actualizarse y no cuenta con gran popularidad.
+las pruebas. 
+* [**Typed-Assert**](https://github.com/elierotenberg/typed-assert): biblioteca específica para TS que
+proporciona funciones de aserciones con tipos fuertemente tipados. Es algo popular en cuanto a uso, pero
+por desgracia ha dejado de actualizarse.
+* [**Assertive-ts**](https://github.com/stackbuilders/assertive-ts): biblioteca de aserciones específica
+para TS, segura en cuanto a tipos y fluida. Desafortunadamente, ha dejado de actualizarse y no cuenta con
+gran popularidad.
 
-Se han descartado bibliotecas de aserciones como Expect.js Should.js, Unexpected, Earl y Power Assert
+Se han descartado bibliotecas de aserciones como Expect.js, Should.js, Unexpected, Earl y Power Assert
 porque, aunque cumplían los requisitos de compatibilidad, su puntuación de "salud" era baja, debido a su
-descenso en popularidad o falta de mantenimiento.
-También otras bibliotecas como zod y typanion, ya que no son bibliotecas de aserciones como tal, sino
-que se centran en definir y validar estructuras de datos y tipos en TypeScript.
+descenso en popularidad o falta de mantenimiento. También otras bibliotecas como zod y typanion, ya que
+no son bibliotecas de aserciones como tal, sino que se centran en definir y validar estructuras de datos
+y tipos en TypeScript.
 
 La elección final entre las aserciones anteriores ha sido las de **Chai**, con una sorprendente
 puntuación de 97/100 según [Snyk Advisor](https://snyk.io/advisor/npm-package/chai), debido a los siguientes
