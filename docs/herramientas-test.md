@@ -2,32 +2,11 @@
 
 ## Metodologías seguidas
 
-Para el desarrollo de tests, se van a seguir dos metodologías que se centran en la
-creación de pruebas tempranas antes de escribir el código de la aplicación:
+Para el desarrollo de tests, se van a seguir dos metodologías:
 
-### TDD (Test-Driven Development)
-
-TDD se centra principalmente en las pruebas unitarias, que son pruebas que verifican el
-comportamiento de unidades individuales de código (como funciones o métodos).
-
-TDD sigue un ciclo de desarrollo iterativo y repetitivo: *Red-Green-Refactor*:
-1. Red: se escribe una prueba que falle porque la funcionalidad aún no está implementada.
-2. Green: se escribe el código mínimo necesario para que la prueba pase.
-3. Refactor: se mejora el código existente sin cambiar su comportamiento, manteniendo las
-pruebas pasadas.
-
-TDD determina cuándo se escriben los tests.
-
-### BDD (Behavior-Driven Development)
-
-BDD se centra en el comportamiento del sistema desde la perspectiva del usuario. Las pruebas
-se expresan en un lenguaje natural comprensible por las personas involucradas en el proyecto.
-
-Las pruebas en BDD se escriben en forma de escenarios que describen el comportamiento deseado
-del sistema. Estos escenarios son generalmente escritos en un formato llamado Gherkin, que
-utiliza palabras clave como *given*, *when* y *then*.
-
-BDD determina el tipo de aserciones utilizadas.
+1. TDD: determina cuándo se escriben los tests (antes de escribir el código de la app)
+2. BDD: determina el tipo de aserciones utilizadas (deben usar una sintaxis más cercana
+al lenguaje natural)
 
 ## Criterios de selección
 
