@@ -34,13 +34,23 @@ han sido las siguientes:
 * [**Chai**](https://github.com/chaijs/chai): es una biblioteca de aserciones flexible que se puede utilizar con diversos estilos
 de BDD. Ofrece las interfaces *expect*, *should*, y *assert*, lo que permite elegir el estilo
 que mejor se adapte a las preferencias de uno.
-* **[Assert Node.js](https://github.com/browserify/commonjs-assert)**: Node.js incluye un módulo de aserciones nativo llamado assert. Este módulo
+* [**Assert Node.js**](https://github.com/browserify/commonjs-assert): Node.js incluye un módulo de aserciones nativo llamado assert. Este módulo
 proporciona funciones simples para realizar aserciones en entornos Node.js. Aunque es básico en
 comparación con algunas bibliotecas externas.
+* [**Hamjest**](https://github.com/rluba/hamjest): biblioteca de aserciones para JavaScript y TypeScript
+que sigue el estilo BDD y proporciona una sintaxis expresiva para realizar afirmaciones sobre valores en
+las pruebas.
+En cuanto a bibliotecas específicas para TypeScript, se han encontrado las siguientes:
+* [**Typed-Assert**](https://github.com/elierotenberg/typed-assert): proporciona funciones de aserciones
+con tipos fuertemente tipados. Es algo popular en cuanto a uso, pero por desgracia ha dejado de actualizarse.
+* [**Assertive-ts**](https://github.com/stackbuilders/assertive-ts): biblioteca de aserciones segura en cuanto
+a tipos y fluida. Desafortunadamente, ha dejado de actualizarse y no cuenta con gran popularidad.
 
-
-Se han descartado bibliotecas de aserciones como Expect.js Should.js, unexpected, Earl y Power Assert
-porque, aunque cumplían los requisitos de compatibilidad, su puntuación de "salud" era menor o igual que 70, debido a su descenso en popularidad o falta de mantenimiento.
+Se han descartado bibliotecas de aserciones como Expect.js Should.js, Unexpected, Earl y Power Assert
+porque, aunque cumplían los requisitos de compatibilidad, su puntuación de "salud" era baja, debido a su
+descenso en popularidad o falta de mantenimiento.
+También otras bibliotecas como zod y typanion, ya que no son bibliotecas de aserciones como tal, sino
+que se centran en definir y validar estructuras de datos y tipos en TypeScript.
 
 La elección final entre las aserciones anteriores ha sido las de **Chai**, con una sorprendente
 puntuación de 97/100 según [Snyk Advisor](https://snyk.io/advisor/npm-package/chai), debido a los siguientes
@@ -62,15 +72,15 @@ pruebas más específicas y significativas. Chai tiene tipos de TypeScript ofici
 Una vez escogidas las aserciones de Chai, se pueden utilizar un conjunto de herramientas que se
 integren bien con este entorno. Se han considerado los siguientes frameworks de testing:
 
-* **Jest**: es un marco de prueba conocido por su configuración fácil y rápida. Aunque tiene su propio
+* [**Jest**](https://github.com/jestjs/jest): es un marco de prueba conocido por su configuración fácil y rápida. Aunque tiene su propio
 conjunto de aserciones (basadas en las de Jasmine), también es compatible con las de Chai.
-* **Mocha**: es un framework de pruebas popular que ofrece flexibilidad y soporte para aserciones de
+* [**Mocha**](https://github.com/mochajs/mocha): es un framework de pruebas popular que ofrece flexibilidad y soporte para aserciones de
 diferentes bibliotecas, pudiendo usar Mocha con aserciones Chai para las pruebas.
-* **Jasmine**: puede ejecutarse directamente en Node.js sin necesidad de un test runner externo,
+* [**Jasmine**](https://github.com/jasmine/jasmine-npm): puede ejecutarse directamente en Node.js sin necesidad de un test runner externo,
 instalando el paquete `jasmine`.
-* **AVA**: es un marco de pruebas que destaca por su simplicidad, velocidad y capacidad de ejecución
+* [**AVA**](https://github.com/avajs/ava): es un marco de pruebas que destaca por su simplicidad, velocidad y capacidad de ejecución
 concurrente de tests. Es compatible con las aserciones de Chai.
-* **Tape**: es un framework de pruebas todo en uno caracterizado por ser simple, liviano y seguir
+* [**Tape**](https://github.com/ljharb/tape): es un framework de pruebas todo en uno caracterizado por ser simple, liviano y seguir
 el formato TAP (Test Anything Protocol). Puede usarse junto con las aserciones de Chai.
 
 La elección final entre los test runners anteriores ha sido **Mocha** con una postiva
