@@ -24,24 +24,19 @@ de actualizaciones y últimas versiones de la herramienta a evaluar.
 como la capacidad de mantener casos de prueba de forma eficiente, la ejecución
 paralela y la creación de informes concisos.
 
-## Aserciones
+## Bibliotecas de aserciones
 
 Las aserciones o matchers son funciones que comparan la salida obtenida con
 la esperada, incluyendo mensajes si la comparación es positiva.
 
 Teniendo en cuenta que debe ser compatible con el enfoque de BDD, las opciones consideradas
 han sido las siguientes:
-* **Chai**: es una biblioteca de aserciones flexible que se puede utilizar con diversos estilos
+* [**Chai**](https://github.com/chaijs/chai): es una biblioteca de aserciones flexible que se puede utilizar con diversos estilos
 de BDD. Ofrece las interfaces *expect*, *should*, y *assert*, lo que permite elegir el estilo
 que mejor se adapte a las preferencias de uno.
-* **Assert Node.js**: Node.js incluye un módulo de aserciones nativo llamado assert. Este módulo
+* **[Assert Node.js](https://github.com/browserify/commonjs-assert)**: Node.js incluye un módulo de aserciones nativo llamado assert. Este módulo
 proporciona funciones simples para realizar aserciones en entornos Node.js. Aunque es básico en
 comparación con algunas bibliotecas externas.
-* **Jasmine**: es un framework all-in-one que incluye tanto el marco de pruebas como la biblioteca de
-aserciones. Utiliza un estilo de desarrollo conducido BDD que enfatiza la legibilidad y la comprensión
-del código de prueba. Su propio conjunto de matchers para realizar aserciones de manera clara y expresiva.
-* **AVA**: es un marco de pruebas completo, pero también cuenta con sus propias funciones de aserción,
-que son simples y expresivas para facilitar la escritura de pruebas.
 
 
 Se han descartado bibliotecas de aserciones como Expect.js Should.js, unexpected, Earl y Power Assert
