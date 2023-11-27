@@ -12,7 +12,7 @@ al lenguaje natural)
 
 Se han tenido en cuenta los siguientes criterios para la elección de herramientas:
 
-1. *Estándares y compatibilidad*: que cumpla los estándares relevantes de la industria
+1. *Estándares y conformidad*: que cumpla los estándares relevantes de la industria
 de desarrollo de software, que sea compatible con el lenguaje (TypeScript) y el runtime
 (Node.js) elegidos.
 2. *Comunidad y popularidad*: una comunidad grande y activa; es decir con una gran cantidad
@@ -40,7 +40,13 @@ comparación con algunas bibliotecas externas.
 * **Jasmine**: es un framework all-in-one que incluye tanto el marco de pruebas como la biblioteca de
 aserciones. Utiliza un estilo de desarrollo conducido BDD que enfatiza la legibilidad y la comprensión
 del código de prueba. Su propio conjunto de matchers para realizar aserciones de manera clara y expresiva.
+* **AVA**: es un marco de pruebas completo, pero también cuenta con sus propias funciones de aserción,
+que son simples y expresivas para facilitar la escritura de pruebas.
+* **Testdouble.js**: es una biblioteca de dobles (mocks, stubs y spies) versátil que puede emplearse en
+enfoques de desarrollo basados en pruebas tanto unitarias como de comportamiento.
 
+Se han descartado bibliotecas de aserciones como Expect.js Should.js, unexpected, Earl y Power Assert
+porque, aunque cumplían los requisitos de compatibilidad, su puntuación de "salud" era menor o igual que 70, debido a su descenso en popularidad o falta de mantenimiento.
 
 La elección final entre las aserciones anteriores ha sido las de **Chai**, con una sorprendente
 puntuación de 97/100 según [Snyk Advisor](https://snyk.io/advisor/npm-package/chai), debido a los siguientes
@@ -57,18 +63,21 @@ aserciones personalizadas, lo que fomenta la adaptación a casos de uso específ
 pruebas más específicas y significativas. Chai tiene tipos de TypeScript oficialmente mantenidos
 (@types/chai), lo que facilita la integración y proporciona una experiencia de desarrollo más sólida.
 
-
 ## Test runners/frameworks
 
 Una vez escogidas las aserciones de Chai, se pueden utilizar un conjunto de herramientas que se
 integren bien con este entorno. Se han considerado los siguientes frameworks de testing:
 
-* **Jest**: como se ha mencionado anteriormente, es un marco de prueba conocido por su configuración
-fácil y rápida. Aunque tiene su propio conjunto de aserciones, también es compatible con las de Jasmine.
+* **Jest**: es un marco de prueba conocido por su configuración fácil y rápida. Aunque tiene su propio
+conjunto de aserciones (basadas en las de Jasmine), también es compatible con las de Chai.
 * **Mocha**: es un framework de pruebas popular que ofrece flexibilidad y soporte para aserciones de
 diferentes bibliotecas, pudiendo usar Mocha con aserciones Chai para las pruebas.
 * **Jasmine**: puede ejecutarse directamente en Node.js sin necesidad de un test runner externo,
 instalando el paquete `jasmine`.
+* **AVA**: es un marco de pruebas que destaca por su simplicidad, velocidad y capacidad de ejecución
+concurrente de tests. Es compatible con las aserciones de Chai.
+* **Tape**: es un framework de pruebas todo en uno caracterizado por ser simple, liviano y seguir
+el formato TAP (Test Anything Protocol). Puede usarse junto con las aserciones de Chai.
 
 La elección final entre los test runners anteriores ha sido **Mocha** con una postiva
 puntuación de 87/100 según [Snyk Advisor](https://snyk.io/advisor/npm-package/mocha), debido a los siguientes
