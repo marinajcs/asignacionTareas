@@ -42,8 +42,7 @@ aserciones. Utiliza un estilo de desarrollo conducido BDD que enfatiza la legibi
 del código de prueba. Su propio conjunto de matchers para realizar aserciones de manera clara y expresiva.
 * **AVA**: es un marco de pruebas completo, pero también cuenta con sus propias funciones de aserción,
 que son simples y expresivas para facilitar la escritura de pruebas.
-* **Testdouble.js**: es una biblioteca de dobles (mocks, stubs y spies) versátil que puede emplearse en
-enfoques de desarrollo basados en pruebas tanto unitarias como de comportamiento.
+
 
 Se han descartado bibliotecas de aserciones como Expect.js Should.js, unexpected, Earl y Power Assert
 porque, aunque cumplían los requisitos de compatibilidad, su puntuación de "salud" era menor o igual que 70, debido a su descenso en popularidad o falta de mantenimiento.
