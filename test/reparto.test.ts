@@ -9,7 +9,7 @@ const compis: Compi[] = [
     new Compi(10)
 ]
 const [Rebeca, Laura, Fernando] = compis;
-const [tarea1, tarea2, tarea3, tarea4, tarea5, tarea6, tarea7]: Tarea[] = tareas;
+const [tarea1, tarea2, tarea3, tarea4, tarea5]: Tarea[] = tareas;
 
 describe('Validación de los datos', () => {
 
@@ -42,6 +42,7 @@ describe('Validación de los datos', () => {
 
     it('debería lanzar una excepción si se le pasa alguna tarea con duración no válida', () => {
         const tarea_invalid: Tarea = {
+            id: 0,
             duracionEstimada: -3,
             puntuacion: 10,
         };
@@ -58,6 +59,7 @@ describe('Validación de los datos', () => {
 
     it('debería lanzar una excepción si se le pasa alguna tarea con puntuación no válida', () => {
         const tarea_invalid: Tarea = {
+            id: 10,
             duracionEstimada: 2,
             puntuacion: -5,
         };

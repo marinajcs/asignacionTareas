@@ -1,6 +1,7 @@
 import { Compi } from './compi';
 
 export type Tarea = {
+    id: number;
     duracionEstimada: number;
     puntuacion: number;
 };
@@ -26,7 +27,6 @@ export class Reparto {
         const totalPts = tareasDisponibles.map(tarea => tarea.puntuacion).reduce((total, pts) => total + pts, 0);
         return totalPts/compis.length;
     }
-
 
     asignarTareas(): Map<Compi,Tarea[]> {
         let asignaciones = new Map<Compi, Tarea[]>();
@@ -69,11 +69,9 @@ export class Reparto {
         this._tareasDisponibles.push(t);
     }
 
-    removeTarea(t: Tarea): void {
-        this._tareasDisponibles.filter(tarea => tarea !== t);
+    removeTarea(idT: number): void {
+        this._tareasDisponibles = this._tareasDisponibles.filter(tarea => tarea.id !== idT);
     }
-        
-
 
     calcularTiempoAsignado(c: Compi, asignaciones: Map<Compi, Tarea[]>): number {
         let tCompi = 0;
