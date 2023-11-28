@@ -1,29 +1,9 @@
-import { Tarea } from '../lib/reparto';
+import { Tarea, crearTarea } from '../lib/reparto';
 
 export const tareas: Tarea[] = [
-    {
-        id: 1,
-        duracionEstimada: 3,
-        puntuacion: 10,
-    },
-    {
-        id: 2,
-        duracionEstimada: 4,
-        puntuacion: 7,
-    },
-    {
-        id: 3,
-        duracionEstimada: 1,
-        puntuacion: 3,
-    },
-    {
-        id: 4,
-        duracionEstimada: 3,
-        puntuacion: 2,
-    },
-    {
-        id: 5,
-        duracionEstimada: 7,
-        puntuacion: 7,
-    }
+    crearTarea(1, 3, 10),
+    crearTarea(2, 4, 7),
+    crearTarea(3, 1, 3),
+    crearTarea(4, 3, 2),
+    crearTarea(5, 7, 7)
 ];

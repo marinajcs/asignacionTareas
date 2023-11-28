@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Reparto, Tarea } from '../lib/reparto';
+import { Reparto, Tarea, crearTarea } from '../lib/reparto';
 import { Compi } from '../lib/compi';
 import { tareas } from '../data/tareas';
 
@@ -14,10 +14,8 @@ const [tarea1, tarea2, tarea3, tarea4, tarea5]: Tarea[] = tareas;
 describe('Validación de los datos', () => {
 
     it('debería lanzar una excepción si se le pasa un array vacío de compañeros', () => {
-        const compis_empty: Compi[] = [];
-
         try {
-            const gestorTareas = new Reparto(compis_empty, [tarea1, tarea2]);
+            const gestorTareas = new Reparto([], [tarea1, tarea2]);
             throw new Error('Se esperaba una excepción pero no se lanzó.');
         } catch (error) {
             const typedError = error as Error;
@@ -27,11 +25,8 @@ describe('Validación de los datos', () => {
     });
 
     it('debería lanzar una excepción si se crea algún compañero con disponibilidad no válida', () => {
-        ;
-
         try {
             const Pablo = new Compi(-5)
-            const gestorTareas = new Reparto([Rebeca, Pablo], [tarea1, tarea2]);
             throw new Error('Se esperaba una excepción pero no se lanzó.');
         } catch (error) {
             const typedError = error as Error;
@@ -40,15 +35,9 @@ describe('Validación de los datos', () => {
         }
     });
 
-    it('debería lanzar una excepción si se le pasa alguna tarea con duración no válida', () => {
-        const tarea_invalid: Tarea = {
-            id: 0,
-            duracionEstimada: -3,
-            puntuacion: 10,
-        };
-
+    it('debería lanzar una excepción si se crea alguna tarea con duración no válida', () => {
         try {
-            const gestorTareas = new Reparto([Rebeca, Laura], [tarea1, tarea_invalid]);
+            const tarea_invalid: Tarea = crearTarea(0, -3, 10);
             throw new Error('Se esperaba una excepción pero no se lanzó.');
         } catch (error) {
             const typedError = error as Error;
@@ -57,15 +46,9 @@ describe('Validación de los datos', () => {
         }
     });
 
-    it('debería lanzar una excepción si se le pasa alguna tarea con puntuación no válida', () => {
-        const tarea_invalid: Tarea = {
-            id: 10,
-            duracionEstimada: 2,
-            puntuacion: -5,
-        };
-
+    it('debería lanzar una excepción si se crea alguna tarea con puntuación no válida', () => {
         try {
-            const gestorTareas = new Reparto([Rebeca, Laura], [tarea1, tarea_invalid]);
+            const tarea_invalid: Tarea = crearTarea(10, 2, -5);
             throw new Error('Se esperaba una excepción pero no se lanzó.');
         } catch (error) {
             const typedError = error as Error;

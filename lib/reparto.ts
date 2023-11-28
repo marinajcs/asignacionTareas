@@ -6,6 +6,16 @@ export type Tarea = {
     puntuacion: number;
 };
 
+export function crearTarea(id: number, duracionEstimada: number, puntuacion: number): Tarea {
+    if (duracionEstimada > 0 && puntuacion > 0) {
+        return { id, duracionEstimada, puntuacion };
+    } else if (duracionEstimada <= 0){
+        throw new Error('La tarea debe tener una duración estimada válida');
+    } else {
+        throw new Error('La tarea debe tener una puntuación válida');
+    }
+}
+
 export class Reparto {
     public goal: number;
     private _tareasDisponibles: Array<Tarea>;
@@ -16,10 +26,7 @@ export class Reparto {
             throw new Error('El array de compañeros no puede estar vacío');
         }
         this._compis = compis_a_asignar;
-
-        this._tareasDisponibles = new Array<Tarea>();
-        this.tareas_a_asignar.forEach(t => this.addTarea(t));
-
+        this._tareasDisponibles = tareas_a_asignar;
         this.goal = this.calcularGoal(this._compis, this._tareasDisponibles);
     }
 
@@ -62,12 +69,6 @@ export class Reparto {
     }
 
     addTarea(t: Tarea): void {
-        if (t.duracionEstimada <= 0) {
-            throw new Error('La tarea debe tener una duración estimada válida');
-        } 
-        if (t.puntuacion <= 0) {
-            throw new Error('La tarea debe tener una puntuación válida');
-        }
         this._tareasDisponibles.push(t);
     }
 
