@@ -6,7 +6,7 @@ export type Tarea = {
 };
 
 export class Reparto {
-    private _goal: number;
+    public goal: number;
     private _tareasDisponibles: Array<Tarea>;
     private _compis: Array<Compi>;
 
@@ -14,13 +14,12 @@ export class Reparto {
         if (compis_a_asignar.length === 0) {
             throw new Error('El array de compañeros no puede estar vacío');
         }
-        this._compis = new Array<Compi>();
-        this.compis_a_asignar.forEach(c => this.addCompi(c));
+        this._compis = compis_a_asignar;
 
         this._tareasDisponibles = new Array<Tarea>();
         this.tareas_a_asignar.forEach(t => this.addTarea(t));
 
-        this._goal = this.calcularGoal(this._compis, this._tareasDisponibles);
+        this.goal = this.calcularGoal(this._compis, this._tareasDisponibles);
     }
 
     calcularGoal(compis:Array<Compi>, tareasDisponibles:Array<Tarea>): number{
@@ -28,9 +27,6 @@ export class Reparto {
         return totalPts/compis.length;
     }
 
-    get goal(): number {
-        return this._goal;
-    }
 
     asignarTareas(): Map<Compi,Tarea[]> {
         let asignaciones = new Map<Compi, Tarea[]>();
@@ -44,7 +40,7 @@ export class Reparto {
                 return tiempoAsignado + tarea.duracionEstimada <= compi.horasDisponibles;
             }).filter(compi => {
                 const ptsAsignados = this.calcularPuntuacion(compi, asignaciones);
-                return ptsAsignados < this._goal;
+                return ptsAsignados < this.goal;
             });
 
             if (compisDisponibles.length > 0) {
@@ -55,8 +51,8 @@ export class Reparto {
 
         this._compis.forEach(compi => {
             const ptsAsignados = this.calcularPuntuacion(compi, asignaciones);
-            if (ptsAsignados < this._goal) {
-                this._goal = ptsAsignados;
+            if (ptsAsignados < this.goal) {
+                this.goal = ptsAsignados;
             }
         });
 
@@ -76,17 +72,8 @@ export class Reparto {
     removeTarea(t: Tarea): void {
         this._tareasDisponibles.filter(tarea => tarea !== t);
     }
+        
 
-    addCompi(c: Compi): void {
-        if (c.horasDisponibles < 0) {
-            throw new Error('El compañero debe tener unas horas disponibles válidas');
-        } 
-        this._compis.push(c);
-    }
-
-    removeCompi(c: Compi): void {
-        this._compis.filter(compi => compi !== c);
-    }
 
     calcularTiempoAsignado(c: Compi, asignaciones: Map<Compi, Tarea[]>): number {
         let tCompi = 0;
