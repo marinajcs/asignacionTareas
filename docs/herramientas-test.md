@@ -16,7 +16,7 @@ Se han tenido en cuenta los siguientes criterios para la elección de herramient
 de desarrollo de software, que sea compatible con el lenguaje (TypeScript) y el runtime
 (Node.js) elegidos.
 2. *Comunidad y mantenimiento*: según Snyk Advisor, se considerá a una comunidad grande y
-activa aquella con una gran cantidad de contribuidores y un elevado índice de uso entre los
+activa aquella con una alta cantidad de contribuidores y un elevado índice de uso entre los
 usuarios. Tendrá buen mantenimiento o no en base a a la frecuencia de actualizaciones y
 últimas versiones de la herramienta a evaluar.
 3. *Mejores prácticas*: que las herramientas sigan buenas prácticas de software
@@ -45,12 +45,17 @@ por desgracia ha dejado de actualizarse.
 * [**Assertive-ts**](https://github.com/stackbuilders/assertive-ts): biblioteca de aserciones específica
 para TS, segura en cuanto a tipos y fluida. Desafortunadamente, ha dejado de actualizarse y no cuenta con
 gran popularidad.
+* [**Hein**](https://github.com/KristjanTammekivi/hein): otra biblioteca de aserciones específica para
+TypeScript y Node.js, que difiere con la de Chai en pequeños detalles de typechecking para valores y
+métodos, haciéndola más especializada a la hora de detectar errores concretos de TypeScript.
 
-Se han descartado bibliotecas de aserciones como Expect.js, Should.js, Unexpected, Earl y Power Assert
-porque, aunque cumplían los requisitos de compatibilidad, su puntuación de "salud" era baja, debido a su
-descenso en popularidad o falta de mantenimiento. También otras bibliotecas como zod y typanion, ya que
-no son bibliotecas de aserciones como tal, sino que se centran en definir y validar estructuras de datos
-y tipos en TypeScript.
+Otras de las bibliotecas que han sido examinadas son `unexpected` y `earl`, que pese a su reducida
+comunidad/popularidad, cuentan con un mantenimiento aceptable, otrogándoles alrededor de 70/100
+puntos de salud.
+Por otro lado, se han descartado las bibliotecas de aserciones `Expect.js`, `Should.js` y `Power Assert`
+debido a su completa falta de mantenimiento. También otras bibliotecas como `zod` y `typanion`, ya que no son
+bibliotecas de aserciones como tal, sino que se centran en definir y validar estructuras de datos y tipos
+en TypeScript.
 
 La elección final entre las aserciones anteriores ha sido las de **Chai**, con una sorprendente
 puntuación de 97/100 según [Snyk Advisor](https://snyk.io/advisor/npm-package/chai), debido a los siguientes
