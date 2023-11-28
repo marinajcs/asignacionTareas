@@ -3,8 +3,17 @@ module.exports = function (grunt) {
     grunt.initConfig({
         exec: {
             typescript: 'tsc --noEmit --target es6 lib/*.ts test/*.ts',
-            mochaTest: 'mocha --require ts-node/register test/**/*.test.ts"' 
         },
+
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec',
+                    require: 'ts-node/register'
+                },
+                src: ['test/**/*.test.ts']
+            }
+        }
         
     });
 
@@ -12,7 +21,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.registerTask('check', 'exec:typescript');
-    grunt.registerTask('test', 'exec:mochaTest');
+    grunt.registerTask('test', 'mochaTest');
 
     // Tarea predeterminada al ejecutar 'grunt' en la línea de comandos
     grunt.registerTask('default', function () {
