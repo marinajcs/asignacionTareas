@@ -15,12 +15,11 @@ Se han tenido en cuenta los siguientes criterios para la elección de herramient
 1. *Estándares y conformidad*: que cumpla los estándares relevantes de la industria
 de desarrollo de software, que sea compatible con el lenguaje (TypeScript) y el runtime
 (Node.js) elegidos.
-2. *Comunidad y popularidad*: una comunidad grande y activa; es decir con una gran cantidad
-de contribuidores y un elevado índice de uso entre los usuarios, casi siempre implica
-gran disponibilidad de recursos y ayuda de otros usuarios.
-3. *Mantenimiento*: se considerará que tiene un buen soporte en base a la frecuencia
-de actualizaciones y últimas versiones de la herramienta a evaluar.
-4. *Mejores prácticas*: que las herramientas sigan buenas prácticas de software
+2. *Comunidad y mantenimiento*: según Snyk Advisor, se considerá a una comunidad grande y
+activa aquella con una gran cantidad de contribuidores y un elevado índice de uso entre los
+usuarios. Tendrá buen mantenimiento o no en base a a la frecuencia de actualizaciones y
+últimas versiones de la herramienta a evaluar.
+3. *Mejores prácticas*: que las herramientas sigan buenas prácticas de software
 como la capacidad de mantener casos de prueba de forma eficiente, la ejecución
 paralela y la creación de informes concisos.
 
@@ -60,10 +59,10 @@ factores:
 comprensión de las pruebas. Su sintaxis tipo BDD contribuye a una interpretación más clara del código.
 Ofrece flexibilidad con varios estilos de aserciones (should, expect, assert), permitiendo adoptar el estilo
 que mejor se alinee con cada usuario.
-2. *Comunidad y popularidad*: Chai es muy adoptado en la comunidad, con una media de 8.386.880 descargas
-semanales, localizándose en el top 5% más utilizado y con alrededor de 160 contribuidores.
-3. Mantenimiento: es actualizado con gran frecuencia, su última versión fue hace dos meses desde el 27/11.
-4. *Mejores prácticas*: Chai se integra bien con otras herramientas y marcos comunes. Permite agregar
+2. *Comunidad y mantenimiento*: Chai es muy adoptado en la comunidad, con una media de 8.386.880 descargas
+semanales, localizándose en el top 5% más utilizado y con alrededor de 160 contribuidores. Además, es
+actualizado con gran frecuencia, su última versión fue hace dos meses desde el 27/11.
+3. *Mejores prácticas*: Chai se integra bien con otras herramientas y marcos comunes. Permite agregar
 aserciones personalizadas, lo que fomenta la adaptación a casos de uso específicos y la creación de
 pruebas más específicas y significativas. Chai tiene tipos de TypeScript oficialmente mantenidos
 (@types/chai), lo que facilita la integración y proporciona una experiencia de desarrollo más sólida.
@@ -89,13 +88,12 @@ puntuación de 87/100 según [Snyk Advisor](https://snyk.io/advisor/npm-package/
 factores:
 1. *Estándares y conformidad*: Mocha admite múltiples estilos de escritura de pruebas y permite
 adoptar convenciones que se adapten a distintas preferencias (describe, it, suite, test...). Chai
-y Mocha  se integran muy bien entre sí.
-2. *Comunidad y popularidad*: Mocha cuenta con un ecosistema robusto, compuesto por unos 430 contribuidores,
+y Mocha se integran muy bien entre sí, y ambos son compatibles con TypeScript y Node.js.
+2. *Comunidad y mantenimiento*: Mocha cuenta con un ecosistema robusto, compuesto por unos 430 contribuidores,
 financiación y una base de usuarios amplia (media de 7.195.110 descargas por semana), situándose en el top 5%
-de herramientas más utilizadas.
-3. *Mantenimiento*: es aceptable y dentro de lo que se consideraría saludable, siendo su última versión
-hace 12 meses y la última actualización, hace 8 desde el 27/11.
-4. *Mejores prácticas*: Mocha dispone de soporte eficiente para pruebas asíncronas, utilización de hooks
+de herramientas más utilizadas. Su mantenimiento es aceptable y dentro de lo que se consideraría saludable,
+siendo su última versión hace 12 meses y la última actualización, hace 8 desde el 27/11.
+3. *Mejores prácticas*: Mocha dispone de soporte eficiente para pruebas asíncronas, utilización de hooks
 y suites jerárquicas para configuración y limpieza... En general, permite adoptar buenas prácticas en el
 desarrollo de tests.
 
