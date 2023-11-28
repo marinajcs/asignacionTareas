@@ -31,21 +31,23 @@ export class Reparto {
     asignarTareas(): Map<Compi,Tarea[]> {
         let asignaciones = new Map<Compi, Tarea[]>();
         this._compis.forEach(compi => asignaciones.set(compi, []));
-        const compisOrdenados = this._compis.sort((a,b) => a.horasDisponibles - b.horasDisponibles);
+
+        let compisOrdenados = this._compis.sort((a,b) => a.horasDisponibles - b.horasDisponibles);
         const tareasOrdenadas = this._tareasDisponibles.sort((a,b) => b.puntuacion - a.puntuacion);
 
         tareasOrdenadas.forEach(tarea => {
             const compisDisponibles = compisOrdenados.filter(compi => {
-                const tiempoAsignado = this.calcularTiempoAsignado(compi, asignaciones);
-                return tiempoAsignado + tarea.duracionEstimada <= compi.horasDisponibles;
+                return tarea.duracionEstimada <= compi.horasDisponibles;
             }).filter(compi => {
                 const ptsAsignados = this.calcularPuntuacion(compi, asignaciones);
                 return ptsAsignados < this.goal;
             });
 
             if (compisDisponibles.length > 0) {
-                const compiAsignado = compisDisponibles[0];
+                let compiAsignado = compisDisponibles[0];
                 asignaciones.get(compiAsignado)!.push(tarea);
+                compiAsignado.horasDisponibles -= tarea.duracionEstimada;
+                compisOrdenados = this._compis.sort((a,b) => a.horasDisponibles - b.horasDisponibles);
             }
         });
 
@@ -71,17 +73,6 @@ export class Reparto {
 
     removeTarea(idT: number): void {
         this._tareasDisponibles = this._tareasDisponibles.filter(tarea => tarea.id !== idT);
-    }
-
-    calcularTiempoAsignado(c: Compi, asignaciones: Map<Compi, Tarea[]>): number {
-        let tCompi = 0;
-        const tareasAsignadas = asignaciones.get(c);
-
-        if (tareasAsignadas) {
-            tCompi = tareasAsignadas.map(tarea => tarea.duracionEstimada).reduce((total, t) => total + t, 0);
-
-        }
-        return tCompi;
     }
 
     calcularPuntuacion(c: Compi, asignaciones: Map<Compi,Tarea[]>): number {
