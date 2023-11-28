@@ -27,12 +27,12 @@ Los [milestones](docs/milestones.md) o productos mínimamente viables.
 
 Para ejecutar la orden que permite comprobar la sintaxis del código, el comando es:
 ```bash
-pnpm grunt check
+grunt check
 ```
 
 ## Comprobación de tests
 
 Para ejecutar la orden que permite comprobar que pasa los tests, el comando es:
 ```bash
-pnpm grunt test
+grunt test
 ```

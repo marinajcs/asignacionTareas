@@ -2,5 +2,5 @@ lenguaje: TypeScript
 entidad: lib/reparto.ts
 automatizar:
   fichero: Gruntfile.js
-  orden: pnpm grunt
+  orden: grunt
 test: test/reparto.test.ts
