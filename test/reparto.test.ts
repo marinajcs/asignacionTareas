@@ -1,31 +1,15 @@
 import { expect } from 'chai';
 import { Reparto, Tarea } from '../lib/reparto';
 import { Compi } from '../lib/compi';
+import { tareas } from '../data/tareas';
 
-const Rebeca = new Compi(6);
-const Laura = new Compi(3);
-const Fernando = new Compi(10);
-
-const tarea1: Tarea = {
-    duracionEstimada: 3,
-    puntuacion: 10,
-};
-const tarea2: Tarea = {
-    duracionEstimada: 4,
-    puntuacion: 7,
-};
-const tarea3: Tarea = {
-    duracionEstimada: 1,
-    puntuacion: 3,
-};
-const tarea4: Tarea = {
-    duracionEstimada: 3,
-    puntuacion: 2,
-};
-const tarea5: Tarea = {
-    duracionEstimada: 7,
-    puntuacion: 7,
-};
+const compis: Compi[] = [
+    new Compi(6),
+    new Compi(3),
+    new Compi(10)
+]
+const [Rebeca, Laura, Fernando] = compis;
+const [tarea1, tarea2, tarea3, tarea4, tarea5, tarea6, tarea7]: Tarea[] = tareas;
 
 describe('Validación de los datos', () => {
 
@@ -42,10 +26,11 @@ describe('Validación de los datos', () => {
         }
     });
 
-    it('debería lanzar una excepción si se le pasa algún compañero con disponibilidad no válida', () => {
-        const Pablo = new Compi(-5);
+    it('debería lanzar una excepción si se crea algún compañero con disponibilidad no válida', () => {
+        ;
 
         try {
+            const Pablo = new Compi(-5)
             const gestorTareas = new Reparto([Rebeca, Pablo], [tarea1, tarea2]);
             throw new Error('Se esperaba una excepción pero no se lanzó.');
         } catch (error) {
