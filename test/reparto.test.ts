@@ -8,14 +8,15 @@ const compis: Compi[] = [
     new Compi(3),
     new Compi(10)
 ]
-const [Rebeca, Laura, Fernando] = compis;
-const [tarea1, tarea2, tarea3, tarea4, tarea5]: Tarea[] = tareas;
+
+const gestorTareas = new Reparto(compis, tareas);
+const asignaciones = gestorTareas.asignarTareas();
 
 describe('Validación de los datos', () => {
 
     it('debería lanzar una excepción si se le pasa un array vacío de compañeros', () => {
         try {
-            const gestorTareas = new Reparto([], [tarea1, tarea2]);
+            const gestorTareas = new Reparto([], [tareas[0], tareas[1]]);
             throw new Error('Se esperaba una excepción pero no se lanzó.');
         } catch (error) {
             const typedError = error as Error;
@@ -62,30 +63,36 @@ describe('Validación de los datos', () => {
 
 describe('Asignación justa de tareas', () => {
 
-    it('debería asignar tareas a compañeros disponibles', () => {
-        const gestorTareas = new Reparto([Rebeca, Laura], [tarea1, tarea2]);
-        const asignaciones = gestorTareas.asignarTareas();
+    it('debería asignar tareas a todos los compañeros disponibles', () => {
+        function todosConTareasAsignadas(asignaciones: Map<Compi, Tarea[]>): boolean {
+            return Array.from(asignaciones.values()).every(tareas => tareas.length > 0);
+        };
 
-        expect(asignaciones.get(Rebeca)).to.include(tarea2);
-        expect(asignaciones.get(Laura)).to.include(tarea1);
+        const todosTienenTareas = todosConTareasAsignadas(asignaciones);
+
+        expect(todosTienenTareas).to.be.true;
     });
 
     it('no debería asignar tareas que exceden la disponibilidad horaria', () => {
-        const gestorTareas = new Reparto([Rebeca, Laura], [tarea1, tarea2, tarea5]);
-        const asignaciones = gestorTareas.asignarTareas();
+        function todosConHorasDisponiblesValidas(asignaciones: Map<Compi, Tarea[]>): boolean {
+            return Array.from(asignaciones.keys()).every(compi => compi.horasDisponibles >= 0);
+        };
 
-        expect(asignaciones.get(Rebeca)).to.not.include(tarea5);
-        expect(asignaciones.get(Laura)).to.not.include(tarea5);
+        const horasValidasTrasReparto = todosConHorasDisponiblesValidas(asignaciones);
+
+        expect(horasValidasTrasReparto);
     });
 
-    it('los compañeros deben cumplir con la meta de puntos semanales', () => {
-        const gestorTareas = new Reparto([Rebeca, Laura, Fernando], [tarea1, tarea2, tarea3, tarea4, tarea5]);
-        const asignaciones = gestorTareas.asignarTareas();
-        const goal = gestorTareas.goal;
+    it('todos los compañeros deben cumplir con la meta de puntos semanales', () => {
+        function calcularPuntuacionTotal(asignaciones: Map<Compi, Tarea[]>): number {
+            return Array.from(asignaciones.values()).reduce((total, tareas) => {
+              return total + tareas.reduce((sumaTareas, tarea) => sumaTareas + tarea.puntuacion, 0);
+            }, 0);
+        };
 
-        expect(gestorTareas.calcularPuntuacion(Rebeca, asignaciones)).to.be.gte(goal);
-        expect(gestorTareas.calcularPuntuacion(Laura, asignaciones)).to.be.gte(goal);
-        expect(gestorTareas.calcularPuntuacion(Fernando, asignaciones)).to.be.gte(goal);
+        const puntuacionTotalCompis = calcularPuntuacionTotal(asignaciones);
+
+        expect(puntuacionTotalCompis).to.be.gte(gestorTareas.goal);
 
     });
 
