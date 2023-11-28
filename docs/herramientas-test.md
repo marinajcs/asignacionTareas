@@ -5,8 +5,8 @@
 Para el desarrollo de tests, se van a seguir dos metodologías:
 
 1. TDD: determina cuándo se escriben los tests (antes de escribir el código de la app)
-2. BDD: determina el tipo de aserciones utilizadas (deben usar una sintaxis más cercana
-al lenguaje natural)
+2. BDD: determina el tipo de aserciones utilizadas (la elección final debe poder usar una
+sintaxis más cercana al lenguaje natural)
 
 ## Criterios de selección
 
@@ -34,11 +34,11 @@ han sido las siguientes:
 de BDD. Ofrece las interfaces *expect*, *should*, y *assert*, lo que permite elegir el estilo
 que mejor se adapte a las preferencias de uno.
 * [**Assert Node.js**](https://github.com/browserify/commonjs-assert): Node.js incluye un módulo de aserciones nativo llamado assert. Este módulo
-proporciona funciones simples para realizar aserciones en entornos Node.js. Aunque es básico en
+proporciona funciones simples para realizar aserciones en entornos Node.js, aunque es básico en
 comparación con algunas bibliotecas externas.
 * [**Hamjest**](https://github.com/rluba/hamjest): biblioteca de aserciones para JavaScript y TypeScript
 que sigue el estilo BDD y proporciona una sintaxis expresiva para realizar afirmaciones sobre valores en
-las pruebas. 
+las pruebas.
 * [**Typed-Assert**](https://github.com/elierotenberg/typed-assert): biblioteca específica para TS que
 proporciona funciones de aserciones con tipos fuertemente tipados. Es algo popular en cuanto a uso, pero
 por desgracia ha dejado de actualizarse.
@@ -55,10 +55,9 @@ y tipos en TypeScript.
 La elección final entre las aserciones anteriores ha sido las de **Chai**, con una sorprendente
 puntuación de 97/100 según [Snyk Advisor](https://snyk.io/advisor/npm-package/chai), debido a los siguientes
 factores:
-1. *Estándares y conformidad*: Chai se destaca por aserciones expresivas y legibles, facilitando la
-comprensión de las pruebas. Su sintaxis tipo BDD contribuye a una interpretación más clara del código.
-Ofrece flexibilidad con varios estilos de aserciones (should, expect, assert), permitiendo adoptar el estilo
-que mejor se alinee con cada usuario.
+1. *Estándares y conformidad*: Chai se destaca por sus aserciones expresivas y legibles, facilitando la
+comprensión de las pruebas. Permite adoptar varios estilos de aserciones, entre ellos el que interesa,
+**BDD**, con funciones como `describe`, `it`, `expect`...
 2. *Comunidad y mantenimiento*: Chai es muy adoptado en la comunidad, con una media de 8.386.880 descargas
 semanales, localizándose en el top 5% más utilizado y con alrededor de 160 contribuidores. Además, es
 actualizado con gran frecuencia, su última versión fue hace dos meses desde el 27/11.
