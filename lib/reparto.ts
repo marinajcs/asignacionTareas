@@ -35,9 +35,7 @@ export class Reparto {
     asignarTareas(): Map<Compi,Tarea[]> {
         let asignaciones = new Map<Compi, Tarea[]>();
         this._compis.forEach(compi => asignaciones.set(compi, []));
-        // Ordenar de menor a mayor horas disponibles
         const compisOrdenados = [...this._compis].sort((a,b) => a.horasDisponibles - b.horasDisponibles);
-        // Ordenar de mayor a menor puntuación
         const tareasOrdenadas = [...this._tareasDisponibles].sort((a,b) => b.puntuacion - a.puntuacion);
 
         tareasOrdenadas.forEach(tarea => {
