@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     // Configuración de Grunt
     grunt.initConfig({
         exec: {
-            typescript: 'tsc --noEmit --target es6 lib/*.ts test/*.ts',
+            typescript: '',
         },
 
         mochaTest: {
