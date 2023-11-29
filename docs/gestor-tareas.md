@@ -36,34 +36,36 @@ otras prácticas de desarrollo eficientes.
 * *Descripción*: Alternativa a npm, también es un administrador de paquetes para Node.js.
 * *Características*: instalación rápida y consistente, ejecuta scripts del archivo package.json.
 
-### grunt
+## grunt (descartado)
 
 * *Descripción*: Grunt es otro sistema de construcción y automatización de tareas para JavaScript. Se configura utilizando un archivo Gruntfile.js y utiliza plugins para realizar tareas específicas.
 * *Características*: configuración basada en tareas, gran cantidad de plugins disponibles, integración con diversas herramientas y tareas.
 
 ## Elección final
 
-Para el desarrollo de una solución para el problema de la asignación de tareas en un piso de estudiantes, podría tener sentido 
-inclinarse hacia Grunt por las siguientes razones:
+Inicialmente se optó por usar **Grunt**, debido a su configuración basada en archivos y estructura modular, y su comunidad activa y
+antigüedad. Sin embargo, durante la etapa de desarrollo de tests se pudo observar que la ejecución de `grunt` obligaba a tenerlo
+instalado localmente en el proyecto (y por tanto ser una dependencia del mismo), lo que supondría mayores complicaciones
+en futuros objetivos. Por este motivo, se tomó la decisión de cambiar la elección del task manager.
 
-1. *Estándares y conformidad*: Grunt sigue estándares para garantizar la coherencia en el desarrollo
-y la integración con otras herramientas. Su configuración basada en archivos y su estructura modular permiten que los desarrolladores sigan convenciones y prácticas comunes en el desarrollo web,
-lo que facilita la colaboración y la interoperabilidad con otras herramientas y sistemas.
-2. *Recomendaciones y comunidad*: Grunt tiene una comunidad activa respaldando su fiabilidad y evolución,
-a diferencia de algunos obsoletos como Gulp. Grunt ha existido por más tiempo y ha acumulado un sólido
-respaldo en la comunidad de desarrollo web. Las recomendaciones y experiencias compartidas por esta
-comunidad pueden ser valiosas al abordar casos de uso específicos en una aplicación de asignación de tareas.
-3. *Mejores prácticas*: Grunt ofrece una amplia variedad de complementos (plugins) que simplifican la automatización
-de tareas comunes en el desarrollo web, ya que puede haber un complemento específico que
-realice la tarea que se busca siguiendo buenas prácticas. Además, al seguir una configuración basada en archivos,
-Grunt se integra sin problemas en el flujo de trabajo de desarrollo.
+La decisión que menores cambios convendría sería migrar la automatización de tareas a **pnpm run**, además de ser una opción
+razonable tener por los siguientes motivos:
+
+1. *Estándares y conformidad*: pnpm run es parte del ecosistema de herramientas de Node.js y npm. Sigue los estándares
+comunes en el desarrollo basado en Node.js y npm, lo que garantiza coherencia en el desarrollo y la integración con
+otras herramientas del ecosistema.
+3. *Recomendaciones y comunidad*: aunque puede ser visto más como un gestor de paquetes que uno de tareas, sigue siendo
+una parte integral del ecosistema Node.js. Tiene una comunidad activa que respalda su desarrollo y evolución, y puede
+beneficiarse de las experiencias y recomendaciones compartidas por la comunidad de Node.js y npm.
+5. *Mejores prácticas*:  se integra con el sistema de scripts de npm, permitiendo la ejecución de tareas personalizadas.
+Se pueden definir y ejecutar scripts en el archivo package.json, similar a cómo se hacía con Grunt, pero sin la necesidad
+de cargar tantos plugins.
 
 Otras ventajas frente a otros gestores de tareas incluyen:
-* Sintaxis más estructurada: Grunt utiliza una configuración declarativa basada en objetos JSON,
-lo que puede hacerla más fácil de entender en términos de tareas con dificultad limitada, al ser
-más directa y suficiente.
-* Abstracción de tareas: proporciona una abstracción más alta para la configuración y ejecución
-de las mismas, lo que puede ser beneficioso para proyectos donde la simplicidad y facilidad de uso
-son prioritarias.
-* Facilidad de configuración inicial: la rapidez de configuración para poder empezar a trabajar
-con Grunt es una cualidad destacable.
+* Espacio de almacenamiento eficiente: pnpm utiliza un mecanismo de almacenamiento compartido que permite a múltiples
+proyectos compartir las dependencias. Esto reduce significativamente el espacio de almacenamiento necesario en comparación con otros gestores de paquetes, como npm o yarn, que duplican las dependencias para cada proyecto.
+* Instalación rápida de paquetes: pnpm realiza la instalación de paquetes de manera más eficiente gracias al uso de enlaces
+simbólicos y la reutilización de dependencias entre proyectos. Esto puede resultar en tiempos de instalación más rápidos,
+especialmente en proyectos con muchas dependencias compartidas.
+* Gestión de versiones mejorada: permite una gestión de versiones más flexible y eficiente. Se pueden instalar y actualizar
+paquetes de forma independiente, lo que facilita la actualización de dependencias sin afectar a todo el proyecto.
