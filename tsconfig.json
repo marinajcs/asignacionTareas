@@ -1,15 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "es6", // Versión de ECMAScript que se compilará
-        "module": "commonjs", // Sistema de módulos a utilizar
-        "outDir": "./dist", // Directorio de salida para los archivos compilados
-        "strict": true, // Habilita todas las opciones estrictas de TypeScript
-        "forceConsistentCasingInFileNames": true, // Fuerza consistencia en mayúsculas/minúsculas en nombres de archivos
-        "resolveJsonModule": true // Habilita la importación de archivos JSON como módulos
-    },
-    "include": [
-        "lib/*.ts",
-        "test/*.ts"
-    ],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es6",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+  },
+  "include": [
+    "lib/*.ts",
+    "test/*.ts"
+  ],
+  "exclude": ["node_modules"]
 }

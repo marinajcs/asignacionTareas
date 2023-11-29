@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "check": "tsc --noEmit --target es6 lib/*.ts test/*.ts",
+    "build": "tsc --noEmit",
     "test": "mocha --require ts-node/register 'test/**/*.test.ts'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
     "chai": "^4.3.10",
