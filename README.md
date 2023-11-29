@@ -21,10 +21,18 @@ Los [milestones](docs/milestones.md) o productos mínimamente viables.
 * Elección del [runtime](docs/runtime.md)
 * Elección del [gestor de dependencias](docs/gestor-dependencias.md)
 * Elección del [gestor de tareas](docs/gestor-tareas.md)
+* Elección de las [herramientas de test](docs/herramientas-test.md)
 
 ## Comprobación de sintaxis
 
 Para ejecutar la orden que permite comprobar la sintaxis del código, el comando es:
 ```bash
-pnpm grunt check
+pnpm run check
+```
+
+## Comprobación de tests
+
+Para ejecutar la orden que permite comprobar que pasa los tests, el comando es:
+```bash
+pnpm run test
 ```
