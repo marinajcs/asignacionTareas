@@ -1,0 +1,29 @@
+name: Docker Build & Push
+
+on:
+  push:
+    paths:
+      - 'Dockerfile'
+      - 'package.json'
+      - 'pnpm-lock.json'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: marinajcs163/asignaciontareas:latest
+
