@@ -13,7 +13,7 @@ y las demás herramientas instaladas actualmente en el proyecto.
 2. *Tamaño y rendimiento*: lo más habitual es que una imagen que ocupe un espacio reducido
 sea más rápida a la hora de iniciarse, al no tener que cargar tantos datos. El tamaño
 de las imágenes se revisará en Docker Hub y el rendimiento dependerá del tiempo que tarde
-en montarse la imagen a partir del `Dockerfile`.
+en ejecutar los tests el contenedor.
 3. *Mantenimiento*: este aspecto será evaluado se basará en cuándo fue la última vez que
 se actualizó, y si recibe actualizaciones de manera frecuente, lo que se verificará en
 Docker Hub.
@@ -71,14 +71,14 @@ la mayoría de usuarios por su estabilidad y seguridad).
 2. *Tamaño y rendimiento*: inicialmente, `node:bookworm-slim` ocupa 70.11MB y
 `debian:bookworm-slim`, 27.8MB; sin embargo, tras la ejecución de sus respectivos
 `Dockerfile`, la imagen de `debian` tendrá un tamaño mayor, ya que se necesita
-instalar Node.js manualmente. [Imagen tamaños finales](tams-imgs.JPG).
-En cuanto al rendimiento, se tendrá en cuenta el que menor tiempo de ejecución
-conlleve su construcción (`build`). Como se puede observar en las imágenes
-[tejec-node](tejec-node.JPG) y [tejec-debian](tejec-debian.JPG), está claro que
-`node` se construye mucho más rápido debido a que ya tiene Node.js instalado.
+instalar Node.js manualmente ([imagen tamaños finales](tams-imgs.JPG)). Esto hará que
+`debian` tarde considerablemente más en construirse, como puede observarse en las
+imágenes [tbuild-node](tbuild-node.JPG) y [tbuild-debian](tbuild-debian.JPG), pero lo realmente importante son los tiempos de ejecución (run). No se aprecia una
+diferencia notable en dichos tiempos entre node y debian, aunque node suele ser
+ligeramente más rápido ([tejec-node](tejec-node.JPG) y [tejec-debian](tejec-debian.JPG)).
 3. *Mantenimiento*: ambos tienen el sello de imagen oficial en Docker Hub y son actualizados
 regularmente, siendo la última actualización de `debian` hace 23 días y la de `node`, 8 días.
-5. *Seguridad*: bookworm-slim de tanto debian como node no presentan vulnerabilidades
+4. *Seguridad*: bookworm-slim de tanto debian como node no presentan vulnerabilidades
 críticas. Esto se puede comprobar en Docker hub: [`debian`](https://hub.docker.com/layers/library/debian/bookworm-slim/images/sha256-93ff361288a7c365614a5791efa3633ce4224542afb6b53a1790330a8e52fc7d?context=explore) y [`node`](https://hub.docker.com/layers/library/node/bookworm-slim/images/sha256-21a626e56b50b95ac0c8263b4b413e80819a2a267579f034ab454218664c08a9?context=explore.)
 
 Una vez evaluados todos los criterios anteriores, se toma la decisión de elegir
