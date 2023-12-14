@@ -24,7 +24,7 @@ vulnerabilidades registradas en Docker Hub.
 
 Etre las opciones de imágenes consideras para la creción de un entorno de pruebas aislado, se encuentran:
 
-* [**Node (variante slim)**](https://hub.docker.com/_/node): imagen oficial de Node.js con herramientas esenciales
+* [**Node (tag slim)**](https://hub.docker.com/_/node): imagen oficial de Node.js con herramientas esenciales
 para el desarrollo.
 * [**CircleCI Node**](https://hub.docker.com/r/cimg/node): imagen de Node.js optimizada para su uso
 en entornos CI/CD (Continuous Integration/Continuous Deployment).
@@ -34,7 +34,7 @@ de aplicaciones preconfigurada para facilitar la implementación.
 contenedores pequeños y eficientes.
 * [**Ubuntu**](https://hub.docker.com/_/ubuntu): imagen basada en el sistema operativo Ubuntu,
 proporcionando un entorno más completo comparado con Alpine.
-* [**Debian (variante slim)**](https://hub.docker.com/_/debian): imagen basada en Debian con una versión más
+* [**Debian (tag slim)**](https://hub.docker.com/_/debian): imagen basada en Debian con una versión más
 ligera, optimizada para reducir el tamaño del contenedor.
 
 De las opciones anteriores, se evaluaron tres en concreto:
@@ -50,9 +50,9 @@ principales de ser una imagen muy ligera y ejecutarse rápidamente; no obstante,
 momento en que se evaluaron las vulnerabilidades actuales, contaba con algunos problemas
 de seguridad serios, (como venía indicado en [Docker Hub](https://hub.docker.com/layers/library/node/20.9.0-alpine3.18/images/sha256-d18f4d9889b217d3fab280cc52fbe1d4caa0e1d2134c6bab901a8b7393dd5f53?context=explore)), por lo que fue descartado.
 
-Así pues, quedaría la opción de **bookworm-slim**, una versión minimalista e interesante como base para contenedores debido a su tamaño reducido, lo que mejora la eficiencia en el
-uso de recursos y la velocidad de
-implementación.
+Así pues, quedaría la opción de **bookworm-slim**, una versión minimalista e interesante como base para
+contenedores debido a su tamaño reducido, lo que mejora la eficiencia en el uso de recursos y la velocidad
+de implementación.
 
 Esto deja dos alternativas: usar `node:bookworm-slim` con Node.js preinstalado o
 `debian:bookworm-slim`, teniendo en cuenta que debe gestionarse la instalación de una
@@ -68,14 +68,15 @@ la mayoría de usuarios por su estabilidad y seguridad).
 `debian:bookworm-slim`, 27.8MB; sin embargo, tras la ejecución de sus respectivos
 `Dockerfile`, la imagen de `debian` tendrá un tamaño mayor, ya que se necesita
 instalar Node.js manualmente. [Imagen tamaños finales](tams-imgs.JPG).
-al contar con un tamaño reducido.
 En cuanto al rendimiento, se tendrá en cuenta el que menor tiempo de ejecución
 conlleve su construcción (`build`). Como se puede observar en las imágenes
 [tejec-node](tejec-node.JPG) y [tejec-debian](tejec-debian.JPG), está claro que
 `node` se construye mucho más rápido debido a que ya tiene Node.js instalado.
-3. *Mantenimiento*: ambos tienen el sello de imagen oficial en Docker Hub y son actualizados regularmente, siendo la última actualización de `debian` hace 23 días y la de `node`, 8.
-4. *Seguridad*: bookworm-slim de tanto debian como node no presentan vulnerabilidades
+3. *Mantenimiento*: ambos tienen el sello de imagen oficial en Docker Hub y son actualizados
+regularmente, siendo la última actualización de `debian` hace 23 días y la de `node`, 8 días.
+5. *Seguridad*: bookworm-slim de tanto debian como node no presentan vulnerabilidades
 críticas. Esto se puede comprobar en Docker hub: [`debian`](https://hub.docker.com/layers/library/debian/bookworm-slim/images/sha256-93ff361288a7c365614a5791efa3633ce4224542afb6b53a1790330a8e52fc7d?context=explore) y [`node`](https://hub.docker.com/layers/library/node/bookworm-slim/images/sha256-21a626e56b50b95ac0c8263b4b413e80819a2a267579f034ab454218664c08a9?context=explore.)
 
 Una vez evaluados todos los criterios anteriores, se toma la decisión de elegir
-**node:bookworm-slim** como imagen base, pues es altamente compatible con el proyecto,rápida, ligera y segura.
+**node:bookworm-slim** como imagen base, pues es compatible y fácil de integrar
+con el proyecto, rápida, ligera y segura.
