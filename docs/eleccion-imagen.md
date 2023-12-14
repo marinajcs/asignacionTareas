@@ -43,6 +43,10 @@ De las opciones anteriores, se evaluaron tres en concreto:
 * [`debian:bookworm-slim`](https://github.com/debuerreotype/docker-debian-artifacts/tree/1f1e36af44a355418661956f15e39f5b04b848b6/bookworm/slim)
 * [`node:alpine`](https://github.com/nodejs/docker-node/blob/6e6de6d890fce6946236cf403b0d5d5b33178e61/21/alpine3.18)
 
+Hay otras etiquetas slim disponibles como `buster-slim` y `bullseye-slim` pero se estima que la primera va
+a entrar en su fin de vida el año que viene y la segunda, hasta 2026, mientras que `bookworm-slim` es la
+más actual y tiene una esperanza de vida un par de años mayor que bullseye.
+
 ## Elección final y justificación
 
 En primera instancia, se podría pensar que **Alpine** es la opción más adecuada debido a sus características
