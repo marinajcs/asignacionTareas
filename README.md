@@ -54,7 +54,7 @@ Para ejecutar el contenedor, se utiliza la orden:
 docker run -u 1001 -t -v `pwd`:/app/test marinajcs163/asignaciontareas
 ```
 
-Se puede descargar la imagen subida en Docker Hub ([marinajcs163/asignaciontareas](https://hub.docker.com/repository/docker/marinajcs163/asignaciontareas/tags?page=1&ordering=last_updated)), mediante la siguiente orden:
+Se puede descargar la imagen subida en Docker Hub ([marinajcs163/asignaciontareas](https://hub.docker.com/repository/docker/marinajcs163/asignaciontareas/general)), mediante la siguiente orden:
 
 ```bash
 docker pull marinajcs163/asignaciontareas:latest
