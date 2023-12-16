@@ -18,6 +18,8 @@ USER node
 
 RUN pnpm install
 
+ENV PATH $PATH:/app/node_modules/.bin
+
 WORKDIR /app/test
 
 CMD ["pnpm", "run", "test"]
