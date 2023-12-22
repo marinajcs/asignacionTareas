@@ -1,19 +1,21 @@
-FROM node:bookworm-slim
+FROM nodered/node-red:latest-minimal
 
 LABEL maintainer="marinacarranza@correo.ugr.es" \
       version="5.0.4"
 
-RUN mkdir -p /app/test && chown -R node:node /app
+USER root
+
+RUN mkdir -p /app/test /.cache/node/corepack /.pnpm && chown -R node-red:node-red /app /.cache /.pnpm
+
+RUN corepack enable
+
+RUN corepack prepare pnpm@latest --activate
+
+USER node-red
 
 WORKDIR /app
 
-COPY --chown=node:node package.json pnpm-lock.yaml ./
-
-USER root
-
-RUN npm install -g pnpm
-
-USER node
+COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm install
 
@@ -21,4 +23,5 @@ ENV PATH $PATH:/app/node_modules/.bin
 
 WORKDIR /app/test
 
-CMD ["pnpm", "run", "test"]
+ENTRYPOINT ["pnpm", "run", "test"]
+

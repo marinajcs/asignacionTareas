@@ -1,7 +1,8 @@
 import { expect } from 'chai';
-import { Reparto, Tarea, crearTarea } from '../lib/reparto';
-import { Compi } from '../lib/compi';
-import { tareas } from '../data/tareas';
+import { Reparto, Tarea, crearTarea } from "../lib/reparto";
+import { Compi } from "../lib/compi";
+import { tareas } from "../data/tareas";
+import "mocha";
 
 const compis: Compi[] = [
     new Compi(6),
