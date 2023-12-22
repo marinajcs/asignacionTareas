@@ -5,7 +5,7 @@ LABEL maintainer="marinacarranza@correo.ugr.es" \
 
 USER root
 
-RUN mkdir -p /app/test /.cache/node/corepack /.pnpm && chown -R node-red:node-red /app /.cache /.pnpm
+RUN mkdir -p /app/test && chown -R node-red:node-red /app
 
 RUN corepack enable
 
