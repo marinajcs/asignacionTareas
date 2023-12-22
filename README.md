@@ -18,14 +18,16 @@ Los [milestones](docs/milestones.md) o productos mínimamente viables.
 
 ## Toolchain
 
-* Elección del [runtime](docs/runtime.md)
-* Elección del [gestor de dependencias](docs/gestor-dependencias.md)
-* Elección del [gestor de tareas](docs/gestor-tareas.md)
-* Elección de las [herramientas de test](docs/herramientas-test.md)
+- Elección del [runtime](docs/runtime.md)
+- Elección del [gestor de dependencias](docs/gestor-dependencias.md)
+- Elección del [gestor de tareas](docs/gestor-tareas.md)
+- Elección de las [herramientas de test](docs/herramientas-test.md)
+- Elección de la [imagen base](docs/eleccion-imagen.md)
 
 ## Comprobación de sintaxis
 
 Para ejecutar la orden que permite comprobar la sintaxis del código, el comando es:
+
 ```bash
 pnpm run check
 ```
@@ -33,6 +35,27 @@ pnpm run check
 ## Comprobación de tests
 
 Para ejecutar la orden que permite comprobar que pasa los tests, el comando es:
+
 ```bash
 pnpm run test
+```
+
+## Ejecución de tests en Docker
+
+Para construir la imagen, se ejecuta el siguiente comando:
+
+```bash
+docker build -t marinajcs163/asignaciontareas:latest .
+```
+
+Para ejecutar el contenedor, se utiliza la orden:
+
+```bash
+docker run -u 1001 -t -v `pwd`:/app/test marinajcs163/asignaciontareas
+```
+
+Se puede descargar la imagen subida en Docker Hub ([marinajcs163/asignaciontareas](https://hub.docker.com/repository/docker/marinajcs163/asignaciontareas/general)), mediante la siguiente orden:
+
+```bash
+docker pull marinajcs163/asignaciontareas:latest
 ```

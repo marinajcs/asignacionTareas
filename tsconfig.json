@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es6",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "commonjs",                                /* Specify what module code is generated. */
+    "target": "es6",
+    "module": "commonjs", 
     "outDir": "./dist",
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-    "strict": true,                                      /* Enable all strict type-checking options. */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                         
+    "skipLibCheck": true,
   },
   "include": [
-    "lib/*.ts",
-    "test/*.ts"
+    "lib/**/*.ts",
+    "data/**/*.ts",
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
