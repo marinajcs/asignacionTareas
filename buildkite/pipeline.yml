@@ -1,0 +1,10 @@
+steps:
+  - label: ":docker: Pull Docker Image"
+    commands:
+      - docker pull marinajcs163/asignaciontareas:latest
+
+  - wait
+  
+  - label: ":docker: Run Tests"
+    commands:
+      - docker run -u 1001 -t -v `pwd`:/app/test marinajcs163/asignaciontareas
