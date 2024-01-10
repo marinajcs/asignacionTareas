@@ -15,6 +15,8 @@ y poder integrarse en el repositorio de GitHub
 servicios de CI gratuitos con características suficientes el proyecto.
 3. *Comunidad y mantenimiento*: la presencia de una comunidad activa, buen soporte técnico
 y una larga "esperanza de vida" mediante actualizaciones frecuentes.
+4. *¿Herramienta ya seleccionada?*: si ya ha sido elegida por muchos alumnos, se descartará,
+optando por herramientas menos exploradas para enriquecer el trabajo de investigación.
 
 ## Herramientas consideradas
 
@@ -69,6 +71,9 @@ y soporte técnico sólido. Buildkite, aunque es un servicio más
 independiente, también cuenta con una comunidad activa y su modelo
 de código abierto para agentes permite una gran confianza en la
 longevidad del servicio.
+4. *¿Herramienta ya usada?*: principal motivo por el que se han
+descartado Travis, CircleCI, Appveyor, etc, y por el cual se le ha
+dado una oportunidad a Buildkite.
 
 ## Versiones de Node probadas
 
