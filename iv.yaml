@@ -1,7 +1,7 @@
 lenguaje: TypeScript
 entidad: lib/reparto.ts
 automatizar:
-  fichero: Gruntfile.js
+  fichero: package.json
   orden: pnpm run
 test: test/reparto.test.ts
 CI:
