@@ -23,6 +23,7 @@ Los [milestones](docs/milestones.md) o productos mínimamente viables.
 - Elección del [gestor de tareas](docs/gestor-tareas.md)
 - Elección de las [herramientas de test](docs/herramientas-test.md)
 - Elección de la [imagen base](docs/eleccion-imagen.md)
+- Elección de las [herramientas de integración continua](docs/herramientas-test.md)
 
 ## Comprobación de sintaxis
 

@@ -4,3 +4,6 @@ automatizar:
   fichero: Gruntfile.js
   orden: pnpm run
 test: test/reparto.test.ts
+CI:
+  - .github/workflows/node.yml
+  - buildkite/pipeline.yml
